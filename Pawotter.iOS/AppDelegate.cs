@@ -11,7 +11,7 @@ namespace Pawotter.iOS
         public override void FinishedLaunching(UIApplication application)
         {
             Window = new UIWindow();
-            Window.RootViewController = new ViewController();
+            Window.RootViewController = new LaunchScreenViewController();
             Window.MakeKeyAndVisible();
         }
     }

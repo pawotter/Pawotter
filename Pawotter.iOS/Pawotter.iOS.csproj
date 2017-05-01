@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Views\ViewController.cs" />
+    <Compile Include="Views\LaunchScreenViewController.cs" />
     <Compile Include="Main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
