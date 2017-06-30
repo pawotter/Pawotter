@@ -49,9 +49,8 @@ Global
 		$1.EolMarker = Unix
 		$1.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $2
-		$2.SpaceWithinMethodCallParentheses = True
-		$2.SpaceAfterCast = True
-		$2.SpaceAfterComma = False
+		$2.SpaceWithinMethodCallParentheses = False
+		$2.SpaceAfterComma = True
 		$2.scope = text/x-csharp
 		$0.TextStylePolicy = $3
 		$3.FileWidth = 150
