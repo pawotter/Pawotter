@@ -93,6 +93,9 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="Views\Shared\Timeline\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -106,6 +109,9 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Views\LaunchScreenViewController.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Views\Shared\Timeline\TimelineViewController.cs" />
+    <Compile Include="Views\Shared\Timeline\CardCell.cs" />
+    <Compile Include="Utils\UIConst.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@ namespace Pawotter.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            EdgesForExtendedLayout = UIRectEdge.None;
             View.BackgroundColor = UIColor.White;
         }
 
@@ -20,7 +21,7 @@ namespace Pawotter.iOS
 
         static UINavigationController createNavigation()
         {
-            var vc = new UIViewController();
+            var vc = new TimelineViewController();
             vc.View.BackgroundColor = UIColor.White;
             var nav = new UINavigationController(vc);
             nav.NavigationBar.Translucent = false;
