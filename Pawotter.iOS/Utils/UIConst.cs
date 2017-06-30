@@ -35,6 +35,7 @@ namespace Pawotter.iOS
         #region color
         internal static UIColor DefaultFontColor => ColorCodeToUIColor(0x222222);
         internal static UIColor MetaDataFontColor => ColorCodeToUIColor(0x999999);
+        internal static UIColor BackgroundColor => UIColor.White;
         internal static UIColor TimelineBackgroundColor => ColorCodeToUIColor(0xDDDDDD);
         internal static UIColor CellBackgroundColor => UIColor.White;
         #endregion

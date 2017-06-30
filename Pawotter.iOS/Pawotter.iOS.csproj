@@ -96,6 +96,7 @@
     <Folder Include="Views\Shared\" />
     <Folder Include="Views\Shared\Timeline\" />
     <Folder Include="Utils\" />
+    <Folder Include="Views\Shared\SwipePage\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -112,6 +113,9 @@
     <Compile Include="Views\Shared\Timeline\TimelineViewController.cs" />
     <Compile Include="Views\Shared\Timeline\CardCell.cs" />
     <Compile Include="Utils\UIConst.cs" />
+    <Compile Include="Views\Shared\SwipePage\SwipePageViewController.cs" />
+    <Compile Include="Views\Shared\SwipePage\SwipePageViewConfig.cs" />
+    <Compile Include="Views\HomeSwipePageController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

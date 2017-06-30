@@ -15,14 +15,13 @@ namespace Pawotter.iOS
 
         public override void ViewDidAppear(bool animated)
         {
-            navigation = createNavigation();
+            navigation = CreateNavigation();
             PresentViewController(navigation, animated, null);
         }
 
-        static UINavigationController createNavigation()
+        static UINavigationController CreateNavigation()
         {
-            var vc = new TimelineViewController();
-            vc.View.BackgroundColor = UIColor.White;
+            var vc = new HomeSwipePageController();
             var nav = new UINavigationController(vc);
             nav.NavigationBar.Translucent = false;
             nav.NavigationBar.BarTintColor = UIColor.Cyan;
