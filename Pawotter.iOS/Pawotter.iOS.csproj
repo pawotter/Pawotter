@@ -117,5 +117,11 @@
     <Compile Include="Views\Shared\SwipePage\SwipePageViewConfig.cs" />
     <Compile Include="Views\HomeSwipePageController.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">
+      <Project>{B007C96D-429E-415E-9507-C4801BB2BFC5}</Project>
+      <Name>Pawotter.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
