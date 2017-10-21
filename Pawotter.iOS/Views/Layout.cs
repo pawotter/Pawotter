@@ -12,6 +12,7 @@ namespace Pawotter.iOS.Views
 
         public static nfloat LineSpace => 17;
         public static nfloat BorderW => 0.5f;
+        public static nfloat Banner => 44;
 
         public static nfloat H(this UIFont font, String text, nfloat width)
         {

@@ -133,6 +133,7 @@
     <Folder Include="Views\" />
     <Folder Include="Assets.xcassets\hoge.imageset\" />
     <Folder Include="Views\Timeline\" />
+    <Folder Include="Views\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -154,6 +155,8 @@
     <Compile Include="Views\CollectionViewFlowLayout.cs" />
     <Compile Include="Views\Layout.cs" />
     <Compile Include="Views\Timeline\TimelineComponents.cs" />
+    <Compile Include="Views\Notification\NotificationViewController.cs" />
+    <Compile Include="Views\Notification\NotificationHeader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

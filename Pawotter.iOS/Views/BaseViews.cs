@@ -1,4 +1,5 @@
 ﻿using UIKit;
+using Pawotter.Core.Consts;
 
 namespace Pawotter.iOS.Views
 {
@@ -29,5 +30,13 @@ namespace Pawotter.iOS.Views
     {
         public BaseCollectionViewCell() { }
         public BaseCollectionViewCell(System.IntPtr handle) : base(handle) { }
+    }
+
+    public sealed class Border : UIView
+    {
+        public Border()
+        {
+            BackgroundColor = ColorConsts.Border.Color();
+        }
     }
 }

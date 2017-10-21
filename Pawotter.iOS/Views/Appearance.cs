@@ -17,6 +17,8 @@ namespace Pawotter.iOS.Views
             UITabBar.Appearance.BarTintColor = ColorConsts.Background.Color();
             UITabBar.Appearance.TintColor = ColorConsts.Tint.Color();
             UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes { TextColor = ColorConsts.Inactive.Color() }, UIControlState.Normal);
+            UISegmentedControl.Appearance.TintColor = ColorConsts.Tint.Color();
+            UISegmentedControl.Appearance.BackgroundColor = ColorConsts.Background.Color();
         }
     }
 }
