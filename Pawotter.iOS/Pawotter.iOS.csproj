@@ -132,6 +132,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
     <Folder Include="Assets.xcassets\hoge.imageset\" />
+    <Folder Include="Views\Timeline\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -144,10 +145,15 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Views\MainTabBarController.cs" />
-    <Compile Include="Views\BaseViewController.cs" />
+    <Compile Include="Views\BaseViews.cs" />
     <Compile Include="Views\Appearance.cs" />
     <Compile Include="Views\Resources.cs" />
     <Compile Include="Views\UIExtensions.cs" />
+    <Compile Include="Views\Timeline\TimelineViewController.cs" />
+    <Compile Include="Views\Timeline\TimelineCell.cs" />
+    <Compile Include="Views\CollectionViewFlowLayout.cs" />
+    <Compile Include="Views\Layout.cs" />
+    <Compile Include="Views\Timeline\TimelineComponents.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

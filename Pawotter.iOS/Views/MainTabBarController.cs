@@ -1,12 +1,14 @@
 ﻿using UIKit;
+using Pawotter.iOS.Views.Timeline;
+using Pawotter.ViewModels;
 
 namespace Pawotter.iOS.Views
 {
-    public class MainTabBarController : UITabBarController
+    public sealed class MainTabBarController : UITabBarController
     {
-        readonly UIViewController home = new UIViewController { TabBarItem = new UITabBarItem("Home", R.Home, 0) };
-        readonly UIViewController local = new UIViewController { TabBarItem = new UITabBarItem("Local", R.Local, 1) };
-        readonly UIViewController federated = new UIViewController { TabBarItem = new UITabBarItem("Federated", R.Federated, 2) };
+        readonly UIViewController home = new TimelineViewController(new HomeTimelineViewModel()) { TabBarItem = new UITabBarItem("Home", R.Home, 0) };
+        readonly UIViewController local = new TimelineViewController(new LocalTimelineViewModel()) { TabBarItem = new UITabBarItem("Local", R.Local, 1) };
+        readonly UIViewController federated = new TimelineViewController(new FederatedTimelineViewModel()) { TabBarItem = new UITabBarItem("Federated", R.Federated, 2) };
         readonly UIViewController notifications = new UIViewController { TabBarItem = new UITabBarItem("Notifications", R.Notifications, 3) };
         readonly UIViewController others = new UIViewController { TabBarItem = new UITabBarItem("Others", R.Others, 4) };
 

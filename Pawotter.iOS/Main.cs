@@ -2,7 +2,7 @@
 
 namespace Pawotter.iOS
 {
-    public class Application
+    public sealed class Application
     {
         static void Main(string[] args)
         {
