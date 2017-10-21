@@ -127,6 +127,46 @@
     <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\ic_chevron_left.png" />
     <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\ic_chevron_left_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\ic_chevron_left_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_border_color.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_border_color.imageset\ic_border_color.png" />
+    <ImageAsset Include="Assets.xcassets\ic_border_color.imageset\ic_border_color_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_border_color.imageset\ic_border_color_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cached.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_cached.imageset\ic_cached.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cached.imageset\ic_cached_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cached.imageset\ic_cached_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_camera.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_camera.imageset\ic_photo_camera.png" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_camera.imageset\ic_photo_camera_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_camera.imageset\ic_photo_camera_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_library.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_library.imageset\ic_photo_library.png" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_library.imageset\ic_photo_library_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_photo_library.imageset\ic_photo_library_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_reply.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_reply.imageset\ic_reply.png" />
+    <ImageAsset Include="Assets.xcassets\ic_reply.imageset\ic_reply_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_reply.imageset\ic_reply_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_settings.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_settings.imageset\ic_settings.png" />
+    <ImageAsset Include="Assets.xcassets\ic_settings.imageset\ic_settings_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_settings.imageset\ic_settings_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -134,6 +174,7 @@
     <Folder Include="Assets.xcassets\hoge.imageset\" />
     <Folder Include="Views\Timeline\" />
     <Folder Include="Views\Notification\" />
+    <Folder Include="Views\Others\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -157,6 +198,8 @@
     <Compile Include="Views\Timeline\TimelineComponents.cs" />
     <Compile Include="Views\Notification\NotificationViewController.cs" />
     <Compile Include="Views\Notification\NotificationHeader.cs" />
+    <Compile Include="Views\Timeline\StatusEditorViewController.cs" />
+    <Compile Include="Views\Others\OthersViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

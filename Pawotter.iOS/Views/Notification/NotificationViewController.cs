@@ -5,9 +5,20 @@ using UIKit;
 
 namespace Pawotter.iOS.Views.Notification
 {
-    public class NotificationViewController : BaseViewController
+    public sealed class NotificationViewController : BaseViewController
     {
+        public enum DisplayMode
+        {
+            MainTab,
+        }
+
+        readonly DisplayMode mode;
         readonly UICollectionView collectionView = new UICollectionView(CGRect.Empty, new CollectionViewFlowLayout());
+
+        public NotificationViewController(DisplayMode mode)
+        {
+            this.mode = mode;
+        }
 
         public override void ViewDidLoad()
         {
@@ -25,6 +36,23 @@ namespace Pawotter.iOS.Views.Notification
         {
             base.ViewDidLayoutSubviews();
             collectionView.Frame = View.Bounds;
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            switch (mode)
+            {
+                case DisplayMode.MainTab:
+                    TabBarController.Title = "Notifications";
+                    break;
+            }
+        }
+
+        public override void ViewWillTransitionToSize(CGSize toSize, IUIViewControllerTransitionCoordinator coordinator)
+        {
+            base.ViewWillTransitionToSize(toSize, coordinator);
+            collectionView.CollectionViewLayout.InvalidateLayout();
         }
 
         #region IUICollectionViewDataSource

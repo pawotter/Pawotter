@@ -3,7 +3,7 @@ using UIKit;
 
 namespace Pawotter.iOS.Views.Notification
 {
-    public class NotificationHeader : UICollectionReusableView
+    public sealed class NotificationHeader : UICollectionReusableView
     {
         readonly UISegmentedControl segmentedControl = new UISegmentedControl("All", "Mentions") { SelectedSegment = 0 };
         readonly Border bottomBorder = new Border();

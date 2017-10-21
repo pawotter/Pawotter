@@ -5,12 +5,26 @@ namespace Pawotter.iOS.Views
 {
     public abstract class BaseViewController : UIViewController
     {
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            if (TabBarController?.NavigationItem != null)
+            {
+                TabBarController.NavigationItem.RightBarButtonItem = null;
+                TabBarController.NavigationItem.LeftBarButtonItem = null;
+            }
+        }
     }
 
     public abstract class BaseNavigationController : UINavigationController
     {
-        public BaseNavigationController(UIViewController rootViewController) : base(rootViewController)
+        protected BaseNavigationController(UIViewController rootViewController) : base(rootViewController)
         {
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
         }
     }
 
@@ -28,8 +42,8 @@ namespace Pawotter.iOS.Views
 
     public abstract class BaseCollectionViewCell : UICollectionViewCell
     {
-        public BaseCollectionViewCell() { }
-        public BaseCollectionViewCell(System.IntPtr handle) : base(handle) { }
+        protected BaseCollectionViewCell() { }
+        protected BaseCollectionViewCell(System.IntPtr handle) : base(handle) { }
     }
 
     public sealed class Border : UIView

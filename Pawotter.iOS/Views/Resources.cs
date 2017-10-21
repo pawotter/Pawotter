@@ -9,5 +9,7 @@ namespace Pawotter.iOS.Views
         public static UIImage Federated => UIImage.FromBundle("ic_public").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
         public static UIImage Notifications => UIImage.FromBundle("ic_notifications").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
         public static UIImage Others => UIImage.FromBundle("ic_more_horiz").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
+
+        public static UIImage Edit => UIImage.FromBundle("ic_border_color").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
     }
 }

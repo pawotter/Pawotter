@@ -29,6 +29,7 @@
     <Compile Include="TimelineItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimelineViewModel.cs" />
+    <Compile Include="StatusEditorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
