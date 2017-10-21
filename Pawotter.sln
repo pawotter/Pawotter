@@ -96,7 +96,6 @@ Global
 		$9.EolMarker = Unix
 		$9.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $10
-		$10.SpaceAfterCast = True
 		$10.scope = text/x-csharp
 		$0.StandardHeader = $11
 	EndGlobalSection

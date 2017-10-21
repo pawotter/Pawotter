@@ -87,12 +87,54 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_people.imageset\ic_people.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people.imageset\ic_people_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people.imageset\ic_people_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_notifications.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_notifications.imageset\ic_notifications.png" />
+    <ImageAsset Include="Assets.xcassets\ic_notifications.imageset\ic_notifications_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_notifications.imageset\ic_notifications_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public.png" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_more_horiz.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_more_horiz.imageset\ic_more_horiz.png" />
+    <ImageAsset Include="Assets.xcassets\ic_more_horiz.imageset\ic_more_horiz_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_more_horiz.imageset\ic_more_horiz_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_next.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_next.imageset\ic_navigate_next.png" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_next.imageset\ic_navigate_next_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_next.imageset\ic_navigate_next_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_before.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_before.imageset\ic_navigate_before.png" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_before.imageset\ic_navigate_before_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_navigate_before.imageset\ic_navigate_before_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_expand_more.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_expand_more.imageset\ic_expand_more.png" />
+    <ImageAsset Include="Assets.xcassets\ic_expand_more.imageset\ic_expand_more_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_expand_more.imageset\ic_expand_more_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_right.imageset\ic_chevron_right.png" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_right.imageset\ic_chevron_right_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_right.imageset\ic_chevron_right_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\ic_chevron_left.png" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\ic_chevron_left_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_chevron_left.imageset\ic_chevron_left_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Assets.xcassets\hoge.imageset\" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -101,7 +143,11 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
+    <Compile Include="Views\MainTabBarController.cs" />
+    <Compile Include="Views\BaseViewController.cs" />
+    <Compile Include="Views\Appearance.cs" />
+    <Compile Include="Views\Resources.cs" />
+    <Compile Include="Views\UIExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">
