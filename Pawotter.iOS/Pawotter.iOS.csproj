@@ -232,6 +232,7 @@
     <Compile Include="Views\Timeline\TimelineItemViewController.cs" />
     <Compile Include="Views\Account\AccountViewController.cs" />
     <Compile Include="Views\Router.cs" />
+    <Compile Include="Views\ImageViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

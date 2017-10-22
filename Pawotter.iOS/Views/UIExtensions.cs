@@ -11,6 +11,7 @@ namespace Pawotter.iOS
         public static nfloat Height(this UIView view) => view.Frame.Height;
         public static nfloat MaxX(this UIView view) => view.Frame.GetMaxX();
         public static nfloat MinY(this UIView view) => view.Frame.GetMinY();
+        public static nfloat MaxY(this UIView view) => view.Frame.GetMaxY();
 
         public static nfloat MinusHalfPadding(this nfloat num) => num - L.PaddingM;
         public static nfloat MinusPadding(this nfloat num) => num - L.PaddingL;

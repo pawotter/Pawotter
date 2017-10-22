@@ -1,6 +1,7 @@
 ﻿using CoreGraphics;
 using Pawotter.iOS.Views.Components;
 using UIKit;
+using Pawotter.Core.Consts;
 
 namespace Pawotter.iOS.Views.Notification
 {
@@ -14,6 +15,7 @@ namespace Pawotter.iOS.Views.Notification
 
         void CommonInit()
         {
+            BackgroundColor = ColorConsts.Background.Color();
             AddSubviews(segmentedControl, bottomBorder);
         }
 

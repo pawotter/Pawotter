@@ -34,10 +34,24 @@ namespace Pawotter.iOS.Views.Timeline
     }
 
     /// <summary>
+    /// timeine images: attachments
+    /// </summary>
+    public sealed class TimelineItemImages : BaseView
+    {
+        public static nfloat H(nfloat width) => width / L.ImageAspectRatio;
+
+        public TimelineItemImages()
+        {
+        }
+    }
+
+    /// <summary>
     /// timeline header: reply, reblog, favourite buttons
     /// </summary>
     public sealed class TimelineItemButtons : BaseView
     {
+        public static nfloat H => L.Icon.Height;
+
         readonly UIButton replyButton = new UIButton(UIButtonType.Custom) { TintColor = ColorConsts.Inactive.Color() };
         readonly UIButton rebloggingButton = new UIButton(UIButtonType.Custom) { TintColor = ColorConsts.Inactive.Color() };
         readonly UIButton favouritingButton = new UIButton(UIButtonType.Custom) { TintColor = ColorConsts.Inactive.Color() };

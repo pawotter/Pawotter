@@ -19,6 +19,8 @@ namespace Pawotter.iOS.Views
         public static nfloat UserIconRadius => 4.0f;
         public static CGSize Icon => new CGSize(18, 18);
 
+        public static nfloat ImageAspectRatio => 506.0f / 254.0f;
+
         public static nfloat H(this UIFont font, String text, nfloat width)
         {
             var size = new CGSize(width, nfloat.MaxValue);

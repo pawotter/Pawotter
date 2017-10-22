@@ -83,7 +83,7 @@ namespace Pawotter.iOS.Views.Timeline
         [Export("collectionView:layout:sizeForItemAtIndexPath:")]
         public CGSize GetSizeForItem(UICollectionView collectionView, UICollectionViewLayout layout, NSIndexPath indexPath)
         {
-            return new CGSize(collectionView.Width(), 100);
+            return new CGSize(collectionView.Width(), TimelineCell.H(new TimelineItemViewModel(), collectionView.Width()));
         }
 
         [Export("scrollViewDidScroll:")]
