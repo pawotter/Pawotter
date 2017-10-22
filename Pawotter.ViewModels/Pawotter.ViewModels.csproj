@@ -30,6 +30,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimelineViewModel.cs" />
     <Compile Include="StatusEditorViewModel.cs" />
+    <Compile Include="AccountViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

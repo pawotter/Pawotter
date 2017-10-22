@@ -1,6 +1,6 @@
 ﻿using UIKit;
-using Pawotter.Core.Consts;
 using System;
+using System.Reactive.Disposables;
 
 namespace Pawotter.iOS.Views
 {
@@ -26,44 +26,33 @@ namespace Pawotter.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-        }
-    }
-
-    public sealed class AppNavigationController : BaseNavigationController
-    {
-        public static AppNavigationController OfModalStyle(UIViewController rootViewController)
-        {
-            var nav = new AppNavigationController(rootViewController);
-            var dismissButton = new UIBarButtonItem(UIBarButtonSystemItem.Stop, (sender, e) =>
-            {
-                rootViewController.DismissViewController(true, null);
-                rootViewController.NavigationItem.RightBarButtonItem.Dispose();
-            });
-            rootViewController.NavigationItem.SetRightBarButtonItem(dismissButton, false);
-            return nav;
-        }
-
-        public AppNavigationController(UIViewController rootViewController) : base(rootViewController)
-        {
+            NavigationBar.Translucent = false;
         }
     }
 
     public abstract class BaseView : UIView
     {
+    }
 
+    public abstract class BaseButton : UIButton
+    {
+        protected readonly CompositeDisposable disposeBag = new CompositeDisposable();
+        protected readonly IRouter router = Application.Container.GetInstance<IRouter>();
+
+        protected BaseButton()
+        {
+        }
+
+        public override void RemoveFromSuperview()
+        {
+            base.RemoveFromSuperview();
+            disposeBag.Dispose();
+        }
     }
 
     public abstract class BaseCollectionViewCell : UICollectionViewCell
     {
         protected BaseCollectionViewCell() { }
-        protected BaseCollectionViewCell(System.IntPtr handle) : base(handle) { }
-    }
-
-    public sealed class Border : UIView
-    {
-        public Border()
-        {
-            BackgroundColor = ColorConsts.Border.Color();
-        }
+        protected BaseCollectionViewCell(IntPtr handle) : base(handle) { }
     }
 }

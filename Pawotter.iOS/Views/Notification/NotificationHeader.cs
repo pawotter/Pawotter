@@ -1,4 +1,5 @@
 ﻿using CoreGraphics;
+using Pawotter.iOS.Views.Components;
 using UIKit;
 
 namespace Pawotter.iOS.Views.Notification
@@ -19,7 +20,7 @@ namespace Pawotter.iOS.Views.Notification
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
-            segmentedControl.Frame = new CGRect(L.PaddingM, L.PaddingM, this.Width().WithPadding(), L.Banner.WithPadding());
+            segmentedControl.Frame = new CGRect(L.PaddingM, L.PaddingM, this.Width().MinusPadding(), L.Banner.MinusPadding());
             bottomBorder.Frame = new CGRect(0, this.Height() - L.BorderW, this.Width(), L.BorderW);
         }
     }

@@ -3,6 +3,7 @@ using CoreGraphics;
 using Foundation;
 using System;
 using Pawotter.ViewModels;
+using Pawotter.iOS.Views.Components;
 
 namespace Pawotter.iOS.Views.Timeline
 {
@@ -90,6 +91,12 @@ namespace Pawotter.iOS.Views.Timeline
 
         [Export("collectionView:layout:referenceSizeForFooterInSection:")]
         public CGSize GetReferenceSizeForFooter(UICollectionView collectionView, UICollectionViewLayout layout, nint section) => new CGSize(collectionView.Width(), 0.1f);
+
+        [Export("collectionView:didSelectItemAtIndexPath:")]
+        public void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+        {
+            NavigationController?.PushViewController(new TimelineItemViewController(new TimelineItemViewModel()), true);
+        }
         #endregion
     }
 }

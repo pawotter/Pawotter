@@ -9,10 +9,15 @@ namespace Pawotter.iOS.Views
     {
         public static nfloat PaddingS => 4.0f;
         public static nfloat PaddingM => 8.0f;
+        public static nfloat PaddingL => 16.0f;
 
         public static nfloat LineSpace => 17;
         public static nfloat BorderW => 0.5f;
         public static nfloat Banner => 44;
+
+        public static CGSize UserIcon => new CGSize(48, 48);
+        public static nfloat UserIconRadius => 4.0f;
+        public static CGSize Icon => new CGSize(18, 18);
 
         public static nfloat H(this UIFont font, String text, nfloat width)
         {

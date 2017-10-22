@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 using Pawotter.iOS.Views;
+using Pawotter.iOS.Views.Components;
 
 namespace Pawotter.iOS
 {
