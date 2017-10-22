@@ -47,8 +47,9 @@ namespace Pawotter.iOS.Views.Timeline
             switch (mode)
             {
                 case DisplayMode.MainTab:
+                    if (TabBarController == null) break;
                     TabBarController.Title = viewModel.Title;
-                    var vc = new NavigationController(new StatusEditorViewController(new StatusEditorViewModel()));
+                    var vc = AppNavigationController.OfModalStyle(new StatusEditorViewController(new StatusEditorViewModel()));
                     var item = new UIBarButtonItem(R.Edit, UIBarButtonItemStyle.Plain, (sender, e) => PresentViewController(vc, true, null));
                     TabBarController.NavigationItem.RightBarButtonItem = item;
                     break;

@@ -1,5 +1,6 @@
 ﻿using UIKit;
 using Pawotter.Core.Consts;
+using System;
 
 namespace Pawotter.iOS.Views
 {
@@ -28,9 +29,21 @@ namespace Pawotter.iOS.Views
         }
     }
 
-    public sealed class NavigationController : BaseNavigationController
+    public sealed class AppNavigationController : BaseNavigationController
     {
-        public NavigationController(UIViewController rootViewController) : base(rootViewController)
+        public static AppNavigationController OfModalStyle(UIViewController rootViewController)
+        {
+            var nav = new AppNavigationController(rootViewController);
+            var dismissButton = new UIBarButtonItem(UIBarButtonSystemItem.Stop, (sender, e) =>
+            {
+                rootViewController.DismissViewController(true, null);
+                rootViewController.NavigationItem.RightBarButtonItem.Dispose();
+            });
+            rootViewController.NavigationItem.SetRightBarButtonItem(dismissButton, false);
+            return nav;
+        }
+
+        public AppNavigationController(UIViewController rootViewController) : base(rootViewController)
         {
         }
     }

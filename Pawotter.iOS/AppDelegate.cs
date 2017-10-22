@@ -13,7 +13,7 @@ namespace Pawotter.iOS
         {
             Appearance.Configure();
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            var vc = new NavigationController(new MainTabBarController());
+            var vc = new AppNavigationController(new MainTabBarController());
             Window.RootViewController = vc;
             Window.MakeKeyAndVisible();
             return true;
