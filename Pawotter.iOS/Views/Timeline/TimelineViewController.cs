@@ -73,7 +73,7 @@ namespace Pawotter.iOS.Views.Timeline
         }
 
         [Export("collectionView:numberOfItemsInSection:")]
-        public nint GetItemsCount(UICollectionView collectionView, nint section) => 10;
+        public nint GetItemsCount(UICollectionView collectionView, nint section) => 30;
 
         [Export("numberOfSectionsInCollectionView:")]
         public nint NumberOfSections(UICollectionView collectionView) => 1;

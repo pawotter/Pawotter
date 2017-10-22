@@ -63,4 +63,10 @@ namespace Pawotter.iOS.Views
         protected BaseCollectionViewCell() { }
         protected BaseCollectionViewCell(IntPtr handle) : base(handle) { }
     }
+
+    public abstract class BaseCollectionReusableView : UICollectionReusableView
+    {
+        protected BaseCollectionReusableView() { }
+        protected BaseCollectionReusableView(IntPtr handle) : base(handle) { }
+    }
 }

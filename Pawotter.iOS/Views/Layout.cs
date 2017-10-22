@@ -8,6 +8,7 @@ namespace Pawotter.iOS.Views
     public static class L
     {
         public static UIFont NormalFont => UIFont.SystemFontOfSize(14);
+        public static UIFont BoldFont => UIFont.BoldSystemFontOfSize(14);
         public static UIFont LargeBoldFont => UIFont.BoldSystemFontOfSize(16);
         public static UIFont ExtraLargeBoldFont => UIFont.BoldSystemFontOfSize(18);
 
@@ -21,6 +22,7 @@ namespace Pawotter.iOS.Views
 
         public static CGSize UserIcon => new CGSize(48, 48);
         public static nfloat UserIconRadius => 4.0f;
+        public static nfloat Radius => 6.0f;
         public static CGSize Icon => new CGSize(18, 18);
 
         public static nfloat ImageAspectRatio => 506.0f / 254.0f;

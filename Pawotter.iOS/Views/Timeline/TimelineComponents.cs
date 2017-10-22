@@ -3,13 +3,14 @@ using Pawotter.ViewModels;
 using CoreGraphics;
 using System;
 using Pawotter.Core.Consts;
+using Pawotter.iOS.Views.Components;
 
 namespace Pawotter.iOS.Views.Timeline
 {
     /// <summary>
     /// timeline header: displayname, acct, posted_at
     /// </summary>
-    public sealed class TimelineItemHeader : BaseView
+    public sealed class TimelineItemHeader : BaseCollectionReusableView
     {
         public static nfloat H => L.LineSpace;
 
@@ -38,12 +39,13 @@ namespace Pawotter.iOS.Views.Timeline
     /// <summary>
     /// timeline status: text
     /// </summary>
-    public sealed class TimelineItemStatus : BaseView
+    public sealed class TimelineItemStatus : BaseCollectionReusableView
     {
         public static nfloat H(string text, nfloat width) => L.NormalFont.H(text, width);
         public nfloat H(nfloat width) => H(status.Text, width);
 
         readonly UILabel status = new UILabel();
+        readonly OverlayButton overlay = new OverlayButton();
 
         public TimelineItemStatus()
         {
@@ -51,13 +53,20 @@ namespace Pawotter.iOS.Views.Timeline
             status.LineBreakMode = UILineBreakMode.WordWrap;
             status.Font = L.NormalFont;
             status.TextColor = ColorConsts.Text.Color();
-            AddSubviews(status);
+            AddSubviews(status, overlay);
+        }
+
+        public override void PrepareForReuse()
+        {
+            base.PrepareForReuse();
+            overlay.Hidden = false;
         }
 
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
             status.Frame = new CGRect(0, 0, this.Width(), this.Height());
+            overlay.Frame = status.Frame;
         }
 
         public void Update(TimelineItemViewModel viewModel)
@@ -69,19 +78,34 @@ namespace Pawotter.iOS.Views.Timeline
     /// <summary>
     /// timeine images: attachments
     /// </summary>
-    public sealed class TimelineItemImages : BaseView
+    public sealed class TimelineItemImages : BaseCollectionReusableView
     {
+        readonly OverlayButton overlay = new OverlayButton();
+
         public static nfloat H(nfloat width) => width / L.ImageAspectRatio;
 
         public TimelineItemImages()
         {
+            AddSubviews(overlay);
+        }
+
+        public override void PrepareForReuse()
+        {
+            base.PrepareForReuse();
+            overlay.Hidden = false;
+        }
+
+        public override void LayoutSubviews()
+        {
+            base.LayoutSubviews();
+            overlay.Frame = new CGRect(0, 0, this.Width(), this.Height());
         }
     }
 
     /// <summary>
     /// timeline header: reply, reblog, favourite buttons
     /// </summary>
-    public sealed class TimelineItemButtons : BaseView
+    public sealed class TimelineItemButtons : BaseCollectionReusableView
     {
         public static nfloat H => L.Icon.Height;
 

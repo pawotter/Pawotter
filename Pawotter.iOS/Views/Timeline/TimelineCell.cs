@@ -48,9 +48,16 @@ namespace Pawotter.iOS.Views.Timeline
 
             // fixme
             header.BackgroundColor = UIColor.Orange;
-            images.BackgroundColor = UIColor.Orange;
-            status.BackgroundColor = UIColor.Orange;
             buttons.BackgroundColor = UIColor.Orange;
+        }
+
+        public override void PrepareForReuse()
+        {
+            base.PrepareForReuse();
+            header.PrepareForReuse();
+            status.PrepareForReuse();
+            images.PrepareForReuse();
+            buttons.PrepareForReuse();
         }
 
         public void Update(TimelineItemViewModel viewModel)
