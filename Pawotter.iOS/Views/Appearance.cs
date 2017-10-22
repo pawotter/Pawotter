@@ -10,9 +10,9 @@ namespace Pawotter.iOS.Views
         public static void Configure()
         {
             UIWindow.Appearance.BackgroundColor = ColorConsts.Tint.Color();
-            UIView.Appearance.BackgroundColor = ColorConsts.Background.Color();
             UILabel.Appearance.Font = NormalFont;
             UILabel.Appearance.TextColor = ColorConsts.Text.Color();
+            UILabel.Appearance.BackgroundColor = UIColor.Clear;
             UIImageView.Appearance.BackgroundColor = ColorConsts.Background.Color();
             UICollectionView.Appearance.BackgroundColor = ColorConsts.ListBackgroud.Color();
             UITableView.Appearance.BackgroundColor = ColorConsts.ListBackgroud.Color();
@@ -28,6 +28,8 @@ namespace Pawotter.iOS.Views
             UINavigationBar.Appearance.TitleTextAttributes = new UIStringAttributes { Font = UIFont.PreferredHeadline };
             UIBarButtonItem.Appearance.TintColor = ColorConsts.Tint.Color();
             UIBarButtonItem.Appearance.SetBackButtonTitlePositionAdjustment(new UIOffset(-60, -60), UIBarMetrics.Default);
+            UICollectionViewCell.Appearance.BackgroundColor = ColorConsts.Background.Color();
+            UITableViewCell.Appearance.BackgroundColor = ColorConsts.Background.Color();
         }
     }
 }

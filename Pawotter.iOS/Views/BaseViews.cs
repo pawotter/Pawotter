@@ -1,11 +1,18 @@
 ﻿using UIKit;
 using System;
 using System.Reactive.Disposables;
+using Pawotter.Core.Consts;
 
 namespace Pawotter.iOS.Views
 {
     public abstract class BaseViewController : UIViewController
     {
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            View.BackgroundColor = ColorConsts.Background.Color();
+        }
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
@@ -27,6 +34,7 @@ namespace Pawotter.iOS.Views
         {
             base.ViewDidLoad();
             NavigationBar.Translucent = false;
+            View.BackgroundColor = ColorConsts.Background.Color();
         }
     }
 

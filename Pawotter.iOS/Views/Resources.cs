@@ -11,5 +11,8 @@ namespace Pawotter.iOS.Views
         public static UIImage Others => UIImage.FromBundle("ic_more_horiz").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
 
         public static UIImage Edit => UIImage.FromBundle("ic_border_color").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
+        public static UIImage Favourite => UIImage.FromBundle("ic_star").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
+        public static UIImage Reply => UIImage.FromBundle("ic_reply").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
+        public static UIImage Reblog => UIImage.FromBundle("ic_cached").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
     }
 }
