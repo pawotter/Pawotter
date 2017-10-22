@@ -5,7 +5,7 @@ using UIKit;
 
 namespace Pawotter.iOS.Views.Notification
 {
-    public sealed class NotificationViewController : BaseViewController
+    public sealed class NotificationViewController : BaseViewController, IUICollectionViewDelegate, IUICollectionViewDataSource
     {
         public enum DisplayMode
         {

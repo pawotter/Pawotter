@@ -2,6 +2,7 @@
 using Pawotter.iOS.Views.Components;
 using UIKit;
 using Pawotter.Core.Consts;
+using System;
 
 namespace Pawotter.iOS.Views.Notification
 {
@@ -11,7 +12,7 @@ namespace Pawotter.iOS.Views.Notification
         readonly Border bottomBorder = new Border();
 
         public NotificationHeader() { CommonInit(); }
-        public NotificationHeader(System.IntPtr handle) : base(handle) { CommonInit(); }
+        public NotificationHeader(IntPtr handle) : base(handle) { CommonInit(); }
 
         void CommonInit()
         {
