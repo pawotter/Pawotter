@@ -2,6 +2,8 @@
 using CoreGraphics;
 using Foundation;
 using System;
+using Pawotter.iOS.Views.Account;
+using Pawotter.ViewModels;
 
 namespace Pawotter.iOS.Views.Others
 {
@@ -52,6 +54,7 @@ namespace Pawotter.iOS.Views.Others
         [Export("tableView:didSelectRowAtIndexPath:")]
         public void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
+            router.PushViewController(new AccountsViewController(new AccountsViewModel()), true);
             tableView.DeselectRow(indexPath, true);
         }
 

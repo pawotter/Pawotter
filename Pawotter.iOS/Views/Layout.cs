@@ -21,6 +21,8 @@ namespace Pawotter.iOS.Views
         public static nfloat Banner => 44;
 
         public static CGSize UserIcon => new CGSize(48, 48);
+        public static CGSize SmallUserIcon => new CGSize(40, 40);
+
         public static nfloat UserIconRadius => 4.0f;
         public static nfloat Radius => 6.0f;
         public static CGSize Icon => new CGSize(18, 18);
@@ -37,6 +39,18 @@ namespace Pawotter.iOS.Views
             dict.Add(UIStringAttributeKey.ParagraphStyle, paragraphStyle);
             dict.Add(UIStringAttributeKey.Font, font);
             return new NSString(text ?? "").WeakGetBoundingRect(size, drawingOptions, dict, null).Height;
+        }
+
+        public static nfloat W(this UIFont font, String text)
+        {
+            var size = new CGSize(nfloat.MaxValue, nfloat.MaxValue);
+            var drawingOptions = NSStringDrawingOptions.UsesLineFragmentOrigin;
+            var dict = new NSMutableDictionary();
+            var paragraphStyle = new NSMutableParagraphStyle();
+            paragraphStyle.LineBreakMode = UILineBreakMode.WordWrap;
+            dict.Add(UIStringAttributeKey.ParagraphStyle, paragraphStyle);
+            dict.Add(UIStringAttributeKey.Font, font);
+            return new NSString(text ?? "").WeakGetBoundingRect(size, drawingOptions, dict, null).Width;
         }
     }
 }

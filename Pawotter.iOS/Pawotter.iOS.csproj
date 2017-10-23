@@ -235,6 +235,9 @@
     <Compile Include="Views\ImageViewController.cs" />
     <Compile Include="Views\Components\OverlayButton.cs" />
     <Compile Include="Views\Account\AccountHeader.cs" />
+    <Compile Include="Views\Account\AccountsViewController.cs" />
+    <Compile Include="Views\Account\AccountCell.cs" />
+    <Compile Include="Views\Components\FollowButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

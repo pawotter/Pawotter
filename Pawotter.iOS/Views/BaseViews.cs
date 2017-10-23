@@ -7,6 +7,8 @@ namespace Pawotter.iOS.Views
 {
     public abstract class BaseViewController : UIViewController
     {
+        protected readonly IRouter router = Application.Container.GetInstance<IRouter>();
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
