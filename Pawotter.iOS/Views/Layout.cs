@@ -22,6 +22,7 @@ namespace Pawotter.iOS.Views
 
         public static CGSize UserIcon => new CGSize(48, 48);
         public static CGSize SmallUserIcon => new CGSize(40, 40);
+        public static CGSize LargeIcon => new CGSize(60, 60);
 
         public static nfloat UserIconRadius => 4.0f;
         public static nfloat Radius => 6.0f;

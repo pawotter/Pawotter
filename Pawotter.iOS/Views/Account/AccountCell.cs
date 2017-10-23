@@ -2,7 +2,6 @@
 using CoreGraphics;
 using UIKit;
 using System;
-using Pawotter.Core.Consts;
 
 namespace Pawotter.iOS.Views.Account
 {
@@ -11,8 +10,8 @@ namespace Pawotter.iOS.Views.Account
         public static nfloat H => L.SmallUserIcon.Height.PlusDoublePadding();
 
         readonly UserIcon userIcon = new UserIcon();
-        readonly UILabel displayName = new UILabel { TextColor = ColorConsts.Text.Color(), Font = L.BoldFont, Text = "DisplayName" };
-        readonly UILabel acct = new UILabel { TextColor = ColorConsts.Inactive.Color(), Font = L.NormalFont, Text = "userid@instance" };
+        readonly Label displayName = new Label { Font = L.BoldFont, Text = "DisplayName" };
+        readonly MetadataLabel acct = new MetadataLabel { Text = "userid@instance" };
         readonly FollowButton followButton = new FollowButton();
 
         public AccountCell() { CommonInit(); }

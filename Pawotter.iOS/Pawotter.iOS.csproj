@@ -238,6 +238,8 @@
     <Compile Include="Views\Account\AccountsViewController.cs" />
     <Compile Include="Views\Account\AccountCell.cs" />
     <Compile Include="Views\Components\FollowButton.cs" />
+    <Compile Include="Views\Components\Label.cs" />
+    <Compile Include="Views\Components\MetadataLabel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

@@ -14,12 +14,10 @@ namespace Pawotter.iOS.Views.Timeline
     {
         public static nfloat H => L.LineSpace;
 
-        readonly UILabel headline = new UILabel();
+        readonly Label headline = new Label() { Font = L.LargeBoldFont };
 
         public TimelineItemHeader()
         {
-            headline.Font = L.LargeBoldFont;
-            headline.TextColor = ColorConsts.Text.Color();
             AddSubviews(headline);
         }
 
@@ -44,15 +42,12 @@ namespace Pawotter.iOS.Views.Timeline
         public static nfloat H(string text, nfloat width) => L.NormalFont.H(text, width);
         public nfloat H(nfloat width) => H(status.Text, width);
 
-        readonly UILabel status = new UILabel();
+        readonly Label status = new Label();
         readonly OverlayButton overlay = new OverlayButton();
 
         public TimelineItemStatus()
         {
             status.Lines = 0;
-            status.LineBreakMode = UILineBreakMode.WordWrap;
-            status.Font = L.NormalFont;
-            status.TextColor = ColorConsts.Text.Color();
             AddSubviews(status, overlay);
         }
 
