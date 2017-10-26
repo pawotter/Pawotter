@@ -29,8 +29,6 @@ namespace Pawotter.iOS.Views.Timeline
         {
             base.ViewDidLoad();
             EdgesForExtendedLayout = UIRectEdge.None;
-            collectionView.WeakDelegate = this;
-            collectionView.WeakDataSource = this;
             collectionView.AlwaysBounceVertical = true;
             collectionView.RegisterClassForCell(typeof(TimelineCell), nameof(TimelineCell));
             View.AddSubviews(collectionView);
@@ -45,13 +43,14 @@ namespace Pawotter.iOS.Views.Timeline
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            collectionView.WeakDelegate = this;
+            collectionView.WeakDataSource = this;
             switch (mode)
             {
                 case DisplayMode.MainTab:
                     if (TabBarController == null) break;
                     TabBarController.Title = viewModel.Title;
-                    var vc = AppNavigationController.OfModalStyle(new StatusEditorViewController(new StatusEditorViewModel()));
-                    var item = new UIBarButtonItem(R.Edit, UIBarButtonItemStyle.Plain, (sender, e) => PresentViewController(vc, true, null));
+                    var item = new UIBarButtonItem(R.Edit, UIBarButtonItemStyle.Plain, (sender, e) => Application.Router.PresentViewController(AppNavigationController.OfModalStyle(new StatusEditorViewController(new StatusEditorViewModel())), true, null));
                     TabBarController.NavigationItem.RightBarButtonItem = item;
                     break;
             }
@@ -61,6 +60,13 @@ namespace Pawotter.iOS.Views.Timeline
         {
             base.ViewWillTransitionToSize(toSize, coordinator);
             collectionView.CollectionViewLayout.InvalidateLayout();
+        }
+
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+            collectionView.WeakDelegate = null;
+            collectionView.WeakDataSource = null;
         }
 
         #region IUICollectionViewDataSource

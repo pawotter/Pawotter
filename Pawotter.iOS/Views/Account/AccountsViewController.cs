@@ -25,8 +25,6 @@ namespace Pawotter.iOS.Views.Account
             base.ViewDidLoad();
             Title = viewModel.Title;
             EdgesForExtendedLayout = UIRectEdge.None;
-            collectionView.WeakDelegate = this;
-            collectionView.WeakDataSource = this;
             collectionView.AlwaysBounceVertical = true;
             collectionView.RegisterClassForSupplementaryView(typeof(AccountHeader), UICollectionElementKindSection.Header, nameof(AccountHeader));
             collectionView.RegisterClassForCell(typeof(AccountCell), nameof(AccountCell));
@@ -39,10 +37,24 @@ namespace Pawotter.iOS.Views.Account
             collectionView.Frame = View.Bounds;
         }
 
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            collectionView.WeakDelegate = this;
+            collectionView.WeakDataSource = this;
+        }
+
         public override void ViewWillTransitionToSize(CGSize toSize, IUIViewControllerTransitionCoordinator coordinator)
         {
             base.ViewWillTransitionToSize(toSize, coordinator);
             collectionView.CollectionViewLayout.InvalidateLayout();
+        }
+
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+            collectionView.WeakDelegate = null;
+            collectionView.WeakDataSource = null;
         }
 
         #region IUICollectionViewDataSource

@@ -9,6 +9,8 @@ namespace Pawotter.iOS.Views
         void PresentViewController(UIViewController viewController, bool animated, Action completionHandler);
 
         void PushViewController(UIViewController viewController, bool animated);
+
+        void DismissViewController(bool animated, Action completionHandler);
     }
 
     public class Router : IRouter
@@ -23,6 +25,12 @@ namespace Pawotter.iOS.Views
         {
             var currentVc = CurrentViewController;
             currentVc?.NavigationController?.PushViewController(viewController, animated);
+        }
+
+        public void DismissViewController(bool animated, Action completionHandler)
+        {
+            var currentVc = CurrentViewController;
+            currentVc?.DismissViewController(animated, completionHandler);
         }
 
         UIViewController CurrentViewController
