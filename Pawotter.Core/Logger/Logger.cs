@@ -9,13 +9,13 @@ namespace Pawotter.Core.Logger
         public static Logger Shared { get; } = new Logger(LogLevel.Info);
         readonly Object thisLock = new Object();
 
-        public LogLevel logLevel { get; set; }
+        public LogLevel LogLevel { get; set; }
         readonly string format;
-        internal bool NeedsLog(LogLevel logLevel) => (int) logLevel >= (int) this.logLevel;
+        internal bool NeedsLog(LogLevel logLevel) => (int) logLevel >= (int) LogLevel;
 
         public Logger(LogLevel logLevel, string format = "[{0}] {3} ({1}:{2})")
         {
-            this.logLevel = logLevel;
+            LogLevel = logLevel;
             this.format = format;
         }
 

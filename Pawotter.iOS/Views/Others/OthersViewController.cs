@@ -54,7 +54,7 @@ namespace Pawotter.iOS.Views.Others
         [Export("tableView:didSelectRowAtIndexPath:")]
         public void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            router.PushViewController(new AccountsViewController(new AccountsViewModel()), true);
+            Application.Router.PushViewController(new AccountsViewController(new AccountsViewModel()), true);
             tableView.DeselectRow(indexPath, true);
         }
 

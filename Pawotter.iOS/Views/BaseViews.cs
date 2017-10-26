@@ -2,12 +2,20 @@
 using System;
 using System.Reactive.Disposables;
 using Pawotter.Core.Consts;
+using Pawotter.Core.Logger;
 
 namespace Pawotter.iOS.Views
 {
     public abstract class BaseViewController : UIViewController
     {
-        protected readonly IRouter router = Application.Container.GetInstance<IRouter>();
+        protected ILogger logger = Application.Container.GetInstance<ILogger>();
+
+        protected BaseViewController()
+        {
+#if DEBUG
+            logger.Debug($"[new] {GetType().Name}.{GetHashCode()}");
+#endif
+        }
 
         public override void ViewDidLoad()
         {
@@ -24,12 +32,24 @@ namespace Pawotter.iOS.Views
                 TabBarController.NavigationItem.LeftBarButtonItem = null;
             }
         }
+
+        ~BaseViewController()
+        {
+#if DEBUG
+            logger.Debug($"[delete] {GetType().Name}.{GetHashCode()}");
+#endif
+        }
     }
 
     public abstract class BaseNavigationController : UINavigationController
     {
+        protected ILogger logger = Application.Container.GetInstance<ILogger>();
+
         protected BaseNavigationController(UIViewController rootViewController) : base(rootViewController)
         {
+#if DEBUG
+            logger.Debug($"[new] {GetType().Name}.{GetHashCode()}");
+#endif
         }
 
         public override void ViewDidLoad()
@@ -37,6 +57,13 @@ namespace Pawotter.iOS.Views
             base.ViewDidLoad();
             NavigationBar.Translucent = false;
             View.BackgroundColor = ColorConsts.Background.Color();
+        }
+
+        ~BaseNavigationController()
+        {
+#if DEBUG
+            logger.Debug($"[delete] {GetType().Name}.{GetHashCode()}");
+#endif
         }
     }
 
