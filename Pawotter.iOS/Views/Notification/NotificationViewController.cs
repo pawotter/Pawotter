@@ -5,7 +5,7 @@ using UIKit;
 
 namespace Pawotter.iOS.Views.Notification
 {
-    public sealed class NotificationViewController : BaseViewController, IUICollectionViewDelegate, IUICollectionViewDataSource
+    public sealed class NotificationViewController : BaseViewController, IUICollectionViewDelegate, IUICollectionViewDataSource, IScrollableViewController
     {
         public enum DisplayMode
         {
@@ -89,5 +89,7 @@ namespace Pawotter.iOS.Views.Notification
             return collectionView.DequeueReusableSupplementaryView(UICollectionElementKindSectionKey.Header, nameof(NotificationHeader), indexPath) as NotificationHeader;
         }
         #endregion
+
+        public void ScrollsToTop() => collectionView.SetContentOffset(CGPoint.Empty, true);
     }
 }

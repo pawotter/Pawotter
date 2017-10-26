@@ -7,7 +7,7 @@ using Pawotter.ViewModels;
 
 namespace Pawotter.iOS.Views.Others
 {
-    public sealed class OthersViewController : BaseViewController, IUITableViewDelegate, IUITableViewDataSource
+    public sealed class OthersViewController : BaseViewController, IUITableViewDelegate, IUITableViewDataSource, IScrollableViewController
     {
         UITableView tableView = new UITableView(CGRect.Empty, UITableViewStyle.Grouped);
 
@@ -65,5 +65,7 @@ namespace Pawotter.iOS.Views.Others
         [Export("tableView:heightForFooterInSection:")]
         public nfloat GetHeightForFooter(UITableView tableView, nint section) => 0.1f;
         #endregion
+
+        public void ScrollsToTop() => tableView.SetContentOffset(CGPoint.Empty, true);
     }
 }

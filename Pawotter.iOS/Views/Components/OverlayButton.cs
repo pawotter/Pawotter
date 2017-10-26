@@ -25,10 +25,5 @@ namespace Pawotter.iOS.Views.Components
                       .Subscribe(_ => Hidden = true)
                       .AddTo(disposeBag);
         }
-
-        ~OverlayButton()
-        {
-            Console.WriteLine("deinit");
-        }
     }
 }

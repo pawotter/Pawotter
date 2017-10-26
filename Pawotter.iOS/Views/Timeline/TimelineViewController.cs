@@ -7,7 +7,7 @@ using Pawotter.iOS.Views.Components;
 
 namespace Pawotter.iOS.Views.Timeline
 {
-    public sealed class TimelineViewController : BaseViewController, IUICollectionViewDataSource, IUICollectionViewDelegate
+    public sealed class TimelineViewController : BaseViewController, IUICollectionViewDataSource, IUICollectionViewDelegate, IScrollableViewController
     {
         public enum DisplayMode
         {
@@ -105,5 +105,7 @@ namespace Pawotter.iOS.Views.Timeline
             NavigationController?.PushViewController(new TimelineItemViewController(new TimelineItemViewModel()), true);
         }
         #endregion
+
+        public void ScrollsToTop() => collectionView.SetContentOffset(CGPoint.Empty, true);
     }
 }

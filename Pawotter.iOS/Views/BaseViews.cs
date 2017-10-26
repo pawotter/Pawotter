@@ -6,6 +6,11 @@ using Pawotter.Core.Logger;
 
 namespace Pawotter.iOS.Views
 {
+    public interface IScrollableViewController
+    {
+        void ScrollsToTop();
+    }
+
     public abstract class BaseViewController : UIViewController
     {
         protected ILogger logger = Application.Container.GetInstance<ILogger>();
