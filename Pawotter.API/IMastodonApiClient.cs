@@ -12,14 +12,14 @@ namespace Pawotter.API
         /// <returns>The account.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Account> GetAccount(string id, CancellationToken? token = null);
+        Task<Account> GetAccountAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Returns the authenticated user's Account.
         /// </summary>
         /// <returns>The current account.</returns>
         /// <param name="token">Token.</param>
-        Task<Account> GetCurrentAccount(CancellationToken? token = null);
+        Task<Account> GetCurrentAccountAsync(CancellationToken? token = null);
 
         /// <summary>
         /// Updating the current user
@@ -30,7 +30,7 @@ namespace Pawotter.API
         /// <param name="base64EncodedAvater">A base64 encoded image to display as the user's avatar.</param>
         /// <param name="base64EncodedHeader">A base64 encoded image to display as the user's header image.</param>
         /// <param name="token">Token.</param>
-        Task<Account> UpdateCurrentAccount(string displayName = null, string note = null, string base64EncodedAvater = null, string base64EncodedHeader = null, CancellationToken? token = null);
+        Task<Account> UpdateCurrentAccountAsync(string displayName = null, string note = null, string base64EncodedAvater = null, string base64EncodedHeader = null, CancellationToken? token = null);
 
         /// <summary>
         /// Getting an account's followers.
@@ -40,7 +40,7 @@ namespace Pawotter.API
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetFollowers(string id, int? limit = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Account[]>> GetFollowersAsync(string id, int? limit = null, Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Getting an account's following.
@@ -50,7 +50,7 @@ namespace Pawotter.API
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>      
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetFollowing(string id, int? limit = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Account[]>> GetFollowingAsync(string id, int? limit = null, Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Getting an account's statuses.
@@ -60,7 +60,7 @@ namespace Pawotter.API
         /// <param name="limit">Limit.</param>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Status[]>> GetStatuses(string id, bool isOnlyMedia = false, bool isExcludeReplies = false, int? limit = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Status[]>> GetStatusesAsync(string id, bool isOnlyMedia = false, bool isExcludeReplies = false, int? limit = null, Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Following an account:
@@ -68,7 +68,7 @@ namespace Pawotter.API
         /// <returns>Relationship.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> Follow(string id, CancellationToken? token = null);
+        Task<Relationship> FollowAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Unfollowing an account:
@@ -76,7 +76,7 @@ namespace Pawotter.API
         /// <returns>Relationship.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> Unfollow(string id, CancellationToken? token = null);
+        Task<Relationship> UnfollowAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Blocking an account
@@ -84,7 +84,7 @@ namespace Pawotter.API
         /// <returns>Relationship.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> Block(string id, CancellationToken? token = null);
+        Task<Relationship> BlockAsync(string id, CancellationToken? token = null);
 
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Pawotter.API
         /// <returns>Relationship.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> Unblock(string id, CancellationToken? token = null);
+        Task<Relationship> UnblockAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Mute an account
@@ -101,7 +101,7 @@ namespace Pawotter.API
         /// <returns>Relationship.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> Mute(string id, CancellationToken? token = null);
+        Task<Relationship> MuteAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Unmute an account
@@ -109,7 +109,7 @@ namespace Pawotter.API
         /// <returns>Relationship.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> Unmute(string id, CancellationToken? token = null);
+        Task<Relationship> UnmuteAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Getting an account's relationship.
@@ -117,7 +117,7 @@ namespace Pawotter.API
         /// <returns>The relationships</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship> GetRelationship(string id, CancellationToken? token = null);
+        Task<Relationship> GetRelationshipAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Getting an account's relationships
@@ -125,7 +125,7 @@ namespace Pawotter.API
         /// <returns>The relationships.</returns>
         /// <param name="ids">Identifiers.</param>
         /// <param name="token">Token.</param>
-        Task<Relationship[]> GetRelationships(string[] ids, CancellationToken? token = null);
+        Task<Relationship[]> GetRelationshipsAsync(string[] ids, CancellationToken? token = null);
 
         /// <summary>
         /// Searching for accounts.
@@ -135,7 +135,7 @@ namespace Pawotter.API
         /// <param name="limit">Maximum number of accounts to get (Default 40, Max 80)</param>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> SearchAccounts(string query, int? limit = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Account[]>> SearchAccountsAsync(string query, int? limit = null, Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a user's blocks.
@@ -143,7 +143,7 @@ namespace Pawotter.API
         /// <returns>Accounts.</returns>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetBlocks(Link? link = null, CancellationToken? token = null);
+        Task<Response<Account[]>> GetBlocksAsync(Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a user's favourites.
@@ -151,7 +151,7 @@ namespace Pawotter.API
         /// <returns>Accounts.</returns>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Status[]>> GetFavourites(Link? link = null, CancellationToken? token = null);
+        Task<Response<Status[]>> GetFavouritesAsync(Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a list of follow requests.
@@ -159,7 +159,7 @@ namespace Pawotter.API
         /// <returns>The follow requests.</returns>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetFollowRequests(Link? link = null, CancellationToken? token = null);
+        Task<Response<Account[]>> GetFollowRequestsAsync(Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Authorizing follow requests.
@@ -167,7 +167,7 @@ namespace Pawotter.API
         /// <returns>Nothing.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task AuthorizeFollowRequests(string id, CancellationToken? token = null);
+        Task AuthorizeFollowRequestsAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Rejecting follow requests.
@@ -175,7 +175,7 @@ namespace Pawotter.API
         /// <returns>Nothing.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task RejectFollowRequests(string id, CancellationToken? token = null);
+        Task RejectFollowRequestsAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Following a remote user.
@@ -183,14 +183,14 @@ namespace Pawotter.API
         /// <returns>The local representation of the followed account, as an Account.</returns>
         /// <param name="uri">URI.</param>
         /// <param name="token">Token.</param>
-        Task<Account> FollowRemoteUser(string uri, CancellationToken? token = null);
+        Task<Account> FollowRemoteUserAsync(string uri, CancellationToken? token = null);
 
         /// <summary>
         /// Getting instance information.
         /// </summary>
         /// <returns>The current Instance.</returns>
         /// <param name="token">Token.</param>
-        Task<Instance> GetInstance(CancellationToken? token = null);
+        Task<Instance> GetInstanceAsync(CancellationToken? token = null);
 
         /// <summary>
         /// Uploading a media attachment.
@@ -198,7 +198,7 @@ namespace Pawotter.API
         /// <returns>An Attachment that can be used when creating a status.</returns>
         /// <param name="base64EncodedMedia">Base64 encoded media.</param>
         /// <param name="token">Token.</param>
-        Task<Attachment> Upload(string base64EncodedMedia, CancellationToken? token = null);
+        Task<Attachment> UploadAsync(string base64EncodedMedia, CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a user's mutes.
@@ -206,7 +206,7 @@ namespace Pawotter.API
         /// <returns>An array of Accounts muted by the authenticated user.</returns>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetMutes(Link? link = null, CancellationToken? token = null);
+        Task<Response<Account[]>> GetMutesAsync(Link? link = null, CancellationToken? token = null);
 
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Pawotter.API
         /// <returns>The Notification for the authenticated user.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Notification> GetNotification(string id, CancellationToken? token = null);
+        Task<Notification> GetNotificationAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a user's notifications.
@@ -223,7 +223,7 @@ namespace Pawotter.API
         /// <returns>A list of Notifications for the authenticated user.</returns>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Notification[]>> GetNotifications(Link? link = null, CancellationToken? token = null);
+        Task<Response<Notification[]>> GetNotificationsAsync(Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Clearing notifications.
@@ -231,7 +231,7 @@ namespace Pawotter.API
         /// </summary>
         /// <returns>Nothing.</returns>
         /// <param name="token">Token.</param>
-        Task ClearNotifications(CancellationToken? token = null);
+        Task ClearNotificationsAsync(CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a user's reports.
@@ -239,7 +239,7 @@ namespace Pawotter.API
         /// <returns>A list of Reports made by the authenticated user.</returns>
         /// <param name="link">MaxId and SinceId are usually get from the Link header.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Report[]>> GetReports(Link? link = null, CancellationToken? token = null);
+        Task<Response<Report[]>> GetReportsAsync(Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Reporting a user.
@@ -249,7 +249,7 @@ namespace Pawotter.API
         /// <param name="statusId">Status identifier.</param>
         /// <param name="comment">Comment.</param>
         /// <param name="token">Token.</param>
-        Task<Report> Report(string accountId, string statusId, string comment, CancellationToken? token = null);
+        Task<Report> ReportAsync(string accountId, string statusId, string comment, CancellationToken? token = null);
 
         /// <summary>
         /// Searching for content.
@@ -260,7 +260,7 @@ namespace Pawotter.API
         /// <param name="limit">Limit.</param>
         /// <param name="link">Link.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Results>> Search(string query, bool resolve = true, int? limit = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Results>> SearchAsync(string query, bool resolve = true, int? limit = null, Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Fetching a status.
@@ -268,7 +268,7 @@ namespace Pawotter.API
         /// <returns>Status.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Status> GetStatus(string id, CancellationToken? token = null);
+        Task<Status> GetStatusAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Getting status context.
@@ -276,7 +276,7 @@ namespace Pawotter.API
         /// <returns>The context.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Context> GetContext(string id, CancellationToken? token = null);
+        Task<Context> GetContextAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Getting a card associated with a status.
@@ -284,7 +284,7 @@ namespace Pawotter.API
         /// <returns>The card.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Card> GetCard(string id, CancellationToken? token = null);
+        Task<Card> GetCardAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Getting who reblogged a status.
@@ -292,7 +292,7 @@ namespace Pawotter.API
         /// <returns>Accounts.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetRebloggedBy(string id, CancellationToken? token = null);
+        Task<Response<Account[]>> GetRebloggedByAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Getting who favourited a status.
@@ -300,7 +300,7 @@ namespace Pawotter.API
         /// <returns>Accounts.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Account[]>> GetFavouritedBy(string id, CancellationToken? token = null);
+        Task<Response<Account[]>> GetFavouritedByAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Posting a new status.
@@ -313,7 +313,7 @@ namespace Pawotter.API
         /// <param name="visibility">Visibility</param>
         /// <param name="isSensitive">set this to mark the media of the status as NSFW.</param>
         /// <param name="token">Token.</param>
-        Task<Status> PostStatus(string status, string inReplyTo = null, string mediaId = null, string spoilerText = null, StatusVisibility? visibility = null, bool? isSensitive = null, CancellationToken? token = null);
+        Task<Status> PostStatusAsync(string status, string inReplyTo = null, string mediaId = null, string spoilerText = null, StatusVisibility? visibility = null, bool? isSensitive = null, CancellationToken? token = null);
 
         /// <summary>
         /// Deleting a status.
@@ -321,7 +321,7 @@ namespace Pawotter.API
         /// <returns>Nothing.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task DeleteStatus(string id, CancellationToken? token = null);
+        Task DeleteStatusAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Reblogging a status:
@@ -329,7 +329,7 @@ namespace Pawotter.API
         /// <returns>Status.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Status> Reblog(string id, CancellationToken? token = null);
+        Task<Status> ReblogAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Unreblogging a status:
@@ -337,7 +337,7 @@ namespace Pawotter.API
         /// <returns>Status.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Status> Unreblog(string id, CancellationToken? token = null);
+        Task<Status> UnreblogAsync(string id, CancellationToken? token = null);
 
         /// <summary>
         /// Favouriting/ a status.
@@ -345,7 +345,7 @@ namespace Pawotter.API
         /// <returns>Status.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Status> Favourite(string id, CancellationToken? token = null);
+        Task<Status> FavouriteAsync(string id, CancellationToken? token = null);
 
 
         /// <summary>
@@ -354,7 +354,7 @@ namespace Pawotter.API
         /// <returns>Status.</returns>
         /// <param name="id">Identifier.</param>
         /// <param name="token">Token.</param>
-        Task<Status> Unfavourite(string id, CancellationToken? token = null);
+        Task<Status> UnfavouriteAsync(string id, CancellationToken? token = null);
 
 
         /// <summary>
@@ -363,7 +363,7 @@ namespace Pawotter.API
         /// <returns>The home timelines.</returns>
         /// <param name="link">Link.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Status[]>> GetHomeTimelines(Link? link = null, CancellationToken? token = null);
+        Task<Response<Status[]>> GetHomeTimelinesAsync(Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Retrieving a public timeline.
@@ -372,7 +372,7 @@ namespace Pawotter.API
         /// <param name="isLocal">Is local.</param>
         /// <param name="link">Link.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Status[]>> GetPublicTimelines(bool? isLocal = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Status[]>> GetPublicTimelinesAsync(bool? isLocal = null, Link? link = null, CancellationToken? token = null);
 
         /// <summary>
         /// Retrieving a tag timeline.
@@ -382,6 +382,6 @@ namespace Pawotter.API
         /// <param name="isLocal">Is local.</param>
         /// <param name="link">Link.</param>
         /// <param name="token">Token.</param>
-        Task<Response<Status[]>> GetTagTimelines(string hashtag, bool? isLocal = null, Link? link = null, CancellationToken? token = null);
+        Task<Response<Status[]>> GetTagTimelinesAsync(string hashtag, bool? isLocal = null, Link? link = null, CancellationToken? token = null);
     }
 }
