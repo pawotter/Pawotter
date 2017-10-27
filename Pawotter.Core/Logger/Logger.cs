@@ -7,7 +7,7 @@ namespace Pawotter.Core.Logger
     public class Logger : ILogger
     {
         public static Logger Shared { get; } = new Logger(LogLevel.Info);
-        readonly Object thisLock = new Object();
+        readonly System.Object thisLock = new System.Object();
 
         public LogLevel LogLevel { get; set; }
         readonly string format;

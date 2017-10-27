@@ -32,12 +32,29 @@
     <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Logger\LogLevel.cs" />
     <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Application.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\Card.cs" />
+    <Compile Include="Entities\Context.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\Error.cs" />
+    <Compile Include="Entities\Instance.cs" />
+    <Compile Include="Entities\Mention.cs" />
+    <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\Relationship.cs" />
+    <Compile Include="Entities\Report.cs" />
+    <Compile Include="Entities\Results.cs" />
+    <Compile Include="Entities\StatusVisibility.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\Token.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Consts\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
