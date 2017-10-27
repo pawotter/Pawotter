@@ -4,6 +4,7 @@ using Foundation;
 using System;
 using Pawotter.ViewModels;
 using Pawotter.iOS.Views.Components;
+using Pawotter.iOS.Views.Search;
 
 namespace Pawotter.iOS.Views.Timeline
 {
@@ -50,8 +51,10 @@ namespace Pawotter.iOS.Views.Timeline
                 case DisplayMode.MainTab:
                     if (TabBarController == null) break;
                     TabBarController.Title = viewModel.Title;
-                    var item = new UIBarButtonItem(R.Edit, UIBarButtonItemStyle.Plain, (sender, e) => Application.Router.PresentViewController(AppNavigationController.OfModalStyle(new StatusEditorViewController(new StatusEditorViewModel())), true, null));
-                    TabBarController.NavigationItem.RightBarButtonItem = item;
+                    var itemL = new UIBarButtonItem(R.Edit, UIBarButtonItemStyle.Plain, (sender, e) => Application.Router.PresentViewController(AppNavigationController.OfModalStyle(new TimelineItemEditorViewController(new TimelineItemEditorViewModel())), true, null));
+                    TabBarController.NavigationItem.RightBarButtonItem = itemL;
+                    var itemR = new UIBarButtonItem(R.Search, UIBarButtonItemStyle.Plain, (sender, e) => Application.Router.PresentViewController(AppNavigationController.OfModalStyle(new SearchViewController(new SearchViewModel())), true, null));
+                    TabBarController.NavigationItem.LeftBarButtonItem = itemR;
                     break;
             }
         }

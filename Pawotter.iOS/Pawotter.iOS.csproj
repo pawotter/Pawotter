@@ -200,6 +200,7 @@
     <Folder Include="Views\Others\" />
     <Folder Include="Views\Components\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -224,7 +225,7 @@
     <Compile Include="Views\Timeline\TimelineComponents.cs" />
     <Compile Include="Views\Notification\NotificationViewController.cs" />
     <Compile Include="Views\Notification\NotificationHeader.cs" />
-    <Compile Include="Views\Timeline\StatusEditorViewController.cs" />
+    <Compile Include="Views\Timeline\TimelineItemEditorViewController.cs" />
     <Compile Include="Views\Others\OthersViewController.cs" />
     <Compile Include="Views\Components\UserIcon.cs" />
     <Compile Include="Views\Components\Border.cs" />
@@ -240,6 +241,8 @@
     <Compile Include="Views\Components\FollowButton.cs" />
     <Compile Include="Views\Components\Label.cs" />
     <Compile Include="Views\Components\MetadataLabel.cs" />
+    <Compile Include="Views\Search\SearchViewController.cs" />
+    <Compile Include="Views\Search\SearchHeader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">
