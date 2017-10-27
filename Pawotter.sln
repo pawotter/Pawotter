@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.Core", "Pawotter.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.Core.Tests", "Pawotter.Core.Tests\Pawotter.Core.Tests.csproj", "{785C67C3-742A-468E-B5D9-A1A4C9C208B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.API", "Pawotter.API\Pawotter.API.csproj", "{16E227F1-D329-46AE-BEBF-16E67903E05F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -59,6 +61,14 @@ Global
 		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Release|iPhone.Build.0 = Release|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -97,7 +107,7 @@ Global
 		$9.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $10
 		$10.scope = text/x-csharp
-		$10.SpaceAfterCast = True
+		$10.SpaceWithinExpressionParentheses = True
 		$0.StandardHeader = $11
 	EndGlobalSection
 EndGlobal

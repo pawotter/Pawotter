@@ -9,18 +9,18 @@ namespace Pawotter.Core
         public static string CreatedAtString(this DateTime dateTime) => dateTime.ToString("yyyy/MM/dd HH:mm");
     }
 
-    static class Object
+    public static class Object
     {
-        internal static bool SequenceEqual<T>(IList<T> left, IList<T> right)
+        public static bool SequenceEqual<T>(IList<T> left, IList<T> right)
         {
             if (left == null && right == null) return true;
             if (ReferenceEquals(left, right)) return true;
             return left.SequenceEqual(right);
         }
 
-        internal static int GetHashCode(object o) => o == null ? 0 : o.GetHashCode();
+        public static int GetHashCode(object o) => o == null ? 0 : o.GetHashCode();
 
-        internal static int GetHashCode(params object[] objects)
+        public static int GetHashCode(params object[] objects)
         {
             var hashCode = 0;
             foreach (object obj in objects)
