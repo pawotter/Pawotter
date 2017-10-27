@@ -201,6 +201,8 @@
     <Folder Include="Views\Components\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Search\" />
+    <Folder Include="Libs\" />
+    <Folder Include="Libs\NetworkActivityManager\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -243,6 +245,11 @@
     <Compile Include="Views\Components\MetadataLabel.cs" />
     <Compile Include="Views\Search\SearchViewController.cs" />
     <Compile Include="Views\Search\SearchHeader.cs" />
+    <Compile Include="Libs\NetworkActivityManager\NetworkActivityManager.cs" />
+    <Compile Include="Libs\NetworkActivityManager\IActivityManager.cs" />
+    <Compile Include="Libs\NetworkActivityManager\AnyActivityIndicatorManager.cs" />
+    <Compile Include="Libs\NetworkActivityManager\IIndicator.cs" />
+    <Compile Include="Libs\NetworkActivityManager\NetworkActivityIndicator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">
