@@ -5,13 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.iOS", "Pawotter.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.ViewModels", "Pawotter.ViewModels\Pawotter.ViewModels.csproj", "{621F70CA-7806-4C19-A9EA-648A7F1F8637}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.ViewModels.Tests", "Pawotter.ViewModels.Tests\Pawotter.ViewModels.Tests.csproj", "{41E7EB4B-3267-423A-B702-CE177D670DEF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.Core", "Pawotter.Core\Pawotter.Core.csproj", "{2A5FE69B-08E1-457A-A004-2D18A608AE97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.Core.Tests", "Pawotter.Core.Tests\Pawotter.Core.Tests.csproj", "{785C67C3-742A-468E-B5D9-A1A4C9C208B3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.API", "Pawotter.API\Pawotter.API.csproj", "{16E227F1-D329-46AE-BEBF-16E67903E05F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.Core.Tests", "Pawotter.Core.Tests\Pawotter.Core.Tests.csproj", "{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.ViewModels.Tests", "Pawotter.ViewModels.Tests\Pawotter.ViewModels.Tests.csproj", "{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,6 @@ Global
 		{621F70CA-7806-4C19-A9EA-648A7F1F8637}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{621F70CA-7806-4C19-A9EA-648A7F1F8637}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{621F70CA-7806-4C19-A9EA-648A7F1F8637}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Release|iPhone.Build.0 = Release|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{41E7EB4B-3267-423A-B702-CE177D670DEF}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{2A5FE69B-08E1-457A-A004-2D18A608AE97}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{2A5FE69B-08E1-457A-A004-2D18A608AE97}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{2A5FE69B-08E1-457A-A004-2D18A608AE97}.Release|iPhone.ActiveCfg = Release|Any CPU
@@ -53,14 +45,6 @@ Global
 		{2A5FE69B-08E1-457A-A004-2D18A608AE97}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{2A5FE69B-08E1-457A-A004-2D18A608AE97}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{2A5FE69B-08E1-457A-A004-2D18A608AE97}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Release|iPhone.Build.0 = Release|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{785C67C3-742A-468E-B5D9-A1A4C9C208B3}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Release|iPhone.ActiveCfg = Release|Any CPU
@@ -69,6 +53,22 @@ Global
 		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{16E227F1-D329-46AE-BEBF-16E67903E05F}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Release|iPhone.Build.0 = Release|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9FD816C9-A3B6-409E-80DD-B91E4F645CFE}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Release|iPhone.Build.0 = Release|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -90,10 +90,10 @@ Global
 		$5.scope = text/x-vs
 		$0.TextStylePolicy = $6
 		$6.FileWidth = 200
-		$6.TabsToSpaces = True
 		$6.NoTabsAfterNonTabs = True
 		$6.EolMarker = Unix
 		$6.scope = text/plain
+		$6.TabsToSpaces = True
 		$0.TextStylePolicy = $7
 		$7.inheritsSet = null
 		$7.scope = application/xml
@@ -101,10 +101,10 @@ Global
 		$8.scope = application/xml
 		$0.TextStylePolicy = $9
 		$9.FileWidth = 200
-		$9.TabsToSpaces = True
 		$9.NoTabsAfterNonTabs = True
 		$9.EolMarker = Unix
 		$9.scope = text/x-csharp
+		$9.TabsToSpaces = True
 		$0.CSharpFormattingPolicy = $10
 		$10.scope = text/x-csharp
 		$10.SpaceWithinExpressionParentheses = True
