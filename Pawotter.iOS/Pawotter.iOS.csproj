@@ -106,6 +106,12 @@
     <Reference Include="SimpleInjector">
       <HintPath>..\packages\SimpleInjector.4.0.12\lib\netstandard1.3\SimpleInjector.dll</HintPath>
     </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.0.0\lib\Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK.iOSBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.0.0\lib\Xamarin.iOS10\HockeySDK.iOSBindings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -250,6 +256,7 @@
     <Compile Include="Libs\NetworkActivityManager\AnyActivityIndicatorManager.cs" />
     <Compile Include="Libs\NetworkActivityManager\IIndicator.cs" />
     <Compile Include="Libs\NetworkActivityManager\NetworkActivityIndicator.cs" />
+    <Compile Include="BuildSecrets.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">
