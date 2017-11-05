@@ -214,6 +214,8 @@
     <Folder Include="Views\Search\" />
     <Folder Include="Libs\" />
     <Folder Include="Libs\NetworkActivityManager\" />
+    <Folder Include="Views\Libs\" />
+    <Folder Include="Views\Libs\SwipePage\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -262,6 +264,10 @@
     <Compile Include="Libs\NetworkActivityManager\IIndicator.cs" />
     <Compile Include="Libs\NetworkActivityManager\NetworkActivityIndicator.cs" />
     <Compile Include="BuildSecrets.cs" />
+    <Compile Include="Views\Libs\SwipePage\SwipePageViewController.cs" />
+    <Compile Include="Views\Libs\SwipePage\SwipePageViewConfig.cs" />
+    <Compile Include="Views\Libs\SwipePage\TabsView.cs" />
+    <Compile Include="Views\Libs\SwipePage\SwipeSampleTabViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

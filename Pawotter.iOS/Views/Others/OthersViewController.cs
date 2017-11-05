@@ -2,14 +2,13 @@
 using CoreGraphics;
 using Foundation;
 using System;
-using Pawotter.iOS.Views.Account;
-using Pawotter.ViewModels;
+using Pawotter.iOS.Views.Libs.SwipePage;
 
 namespace Pawotter.iOS.Views.Others
 {
     public sealed class OthersViewController : BaseViewController, IUITableViewDelegate, IUITableViewDataSource, IScrollableViewController
     {
-        UITableView tableView = new UITableView(CGRect.Empty, UITableViewStyle.Grouped);
+        readonly UITableView tableView = new UITableView(CGRect.Empty, UITableViewStyle.Grouped);
 
         public override void ViewDidLoad()
         {
@@ -54,7 +53,7 @@ namespace Pawotter.iOS.Views.Others
         [Export("tableView:didSelectRowAtIndexPath:")]
         public void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            Application.Router.PushViewController(new AccountsViewController(new AccountsViewModel()), true);
+            Application.Router.PushViewController(new SwipeSampleTabViewController(), true);
             tableView.DeselectRow(indexPath, true);
         }
 
