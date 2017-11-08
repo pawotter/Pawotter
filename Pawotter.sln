@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.Core.Tests", "Pawo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.ViewModels.Tests", "Pawotter.ViewModels.Tests\Pawotter.ViewModels.Tests.csproj", "{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawotter.iOS.Libs", "Pawotter.iOS.Libs\Pawotter.iOS.Libs.csproj", "{68C97A2B-977E-4D00-A0B1-E22A6496093D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -69,6 +71,14 @@ Global
 		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{08BB2720-E4F0-4E75-BDDB-E6B2AD5096C6}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Release|iPhone.Build.0 = Release|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{68C97A2B-977E-4D00-A0B1-E22A6496093D}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

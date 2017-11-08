@@ -212,8 +212,6 @@
     <Folder Include="Views\Components\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Search\" />
-    <Folder Include="Libs\" />
-    <Folder Include="Libs\NetworkActivityManager\" />
     <Folder Include="Views\Libs\" />
     <Folder Include="Views\Libs\SwipePage\" />
   </ItemGroup>
@@ -258,11 +256,6 @@
     <Compile Include="Views\Components\MetadataLabel.cs" />
     <Compile Include="Views\Search\SearchViewController.cs" />
     <Compile Include="Views\Search\SearchHeader.cs" />
-    <Compile Include="Libs\NetworkActivityManager\NetworkActivityManager.cs" />
-    <Compile Include="Libs\NetworkActivityManager\IActivityManager.cs" />
-    <Compile Include="Libs\NetworkActivityManager\AnyActivityIndicatorManager.cs" />
-    <Compile Include="Libs\NetworkActivityManager\IIndicator.cs" />
-    <Compile Include="Libs\NetworkActivityManager\NetworkActivityIndicator.cs" />
     <Compile Include="BuildSecrets.cs" />
     <Compile Include="Views\Libs\SwipePage\SwipePageViewController.cs" />
     <Compile Include="Views\Libs\SwipePage\SwipePageViewConfig.cs" />
@@ -277,6 +270,10 @@
     <ProjectReference Include="..\Pawotter.Core\Pawotter.Core.csproj">
       <Project>{2A5FE69B-08E1-457A-A004-2D18A608AE97}</Project>
       <Name>Pawotter.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pawotter.iOS.Libs\Pawotter.iOS.Libs.csproj">
+      <Project>{68C97A2B-977E-4D00-A0B1-E22A6496093D}</Project>
+      <Name>Pawotter.iOS.Libs</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
