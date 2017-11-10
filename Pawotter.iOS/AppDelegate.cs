@@ -41,5 +41,11 @@ namespace Pawotter.iOS
             manager.StartManager();
             manager.Authenticator.AuthenticateInstallation();
         }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            Logger.Shared.Debug($"Application.OpenUrl: {url}");
+            return true;
+        }
     }
 }

@@ -34,5 +34,18 @@
 	<string>0.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>0.0.0.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.pawotter</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>pawotter</string>
+			</array>
+			<key>CFBundleURLTypes</key>
+			<string>Viewer</string>
+		</dict>
+	</array>
 </dict>
 </plist>
