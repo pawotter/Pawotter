@@ -30,6 +30,10 @@
     <Compile Include="IMastodonApiClient.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Link.cs" />
+    <Compile Include="IMastodonOAuthClient.cs" />
+    <Compile Include="MastodonOAuthClient.cs" />
+    <Compile Include="BaseApiClient.cs" />
+    <Compile Include="Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.Core\Pawotter.Core.csproj">

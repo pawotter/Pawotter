@@ -279,6 +279,10 @@
       <Project>{68C97A2B-977E-4D00-A0B1-E22A6496093D}</Project>
       <Name>Pawotter.iOS.Libs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pawotter.API\Pawotter.API.csproj">
+      <Project>{16E227F1-D329-46AE-BEBF-16E67903E05F}</Project>
+      <Name>Pawotter.API</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

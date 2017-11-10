@@ -48,6 +48,9 @@
     <Compile Include="Entities\StatusVisibility.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Token.cs" />
+    <Compile Include="Entities\OAuth\Application.cs" />
+    <Compile Include="Entities\OAuth\AccessScope.cs" />
+    <Compile Include="Entities\OAuth\Token.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -55,6 +58,7 @@
   <ItemGroup>
     <Folder Include="Consts\" />
     <Folder Include="Entities\" />
+    <Folder Include="Entities\OAuth\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
