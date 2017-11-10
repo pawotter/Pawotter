@@ -48,6 +48,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="NetworkActivityManager\" />
+    <Folder Include="KeychainService\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,6 +57,15 @@
     <Compile Include="NetworkActivityManager\IIndicator.cs" />
     <Compile Include="NetworkActivityManager\NetworkActivityIndicator.cs" />
     <Compile Include="NetworkActivityManager\NetworkActivityManager.cs" />
+    <Compile Include="KeychainService\IKeychainService.cs" />
+    <Compile Include="KeychainService\KeychainService.cs" />
+    <Compile Include="KeychainService\KeychainServiceConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pawotter.Core\Pawotter.Core.csproj">
+      <Project>{2A5FE69B-08E1-457A-A004-2D18A608AE97}</Project>
+      <Name>Pawotter.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
