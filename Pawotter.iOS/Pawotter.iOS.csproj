@@ -264,6 +264,7 @@
     <Compile Include="Views\Libs\SwipePage\TabsView.cs" />
     <Compile Include="Views\Libs\SwipePage\SwipeSampleTabViewController.cs" />
     <Compile Include="Services\KeychainKey.cs" />
+    <Compile Include="Views\WebViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

@@ -1,12 +1,13 @@
 ﻿using UIKit;
 using CoreGraphics;
+using Pawotter.Core.Consts;
 
 namespace Pawotter.iOS.Views
 {
     public class ImageViewController : BaseViewController
     {
         readonly UIScrollView scrollView = new UIScrollView();
-        readonly UIImageView imageView = new UIImageView();
+        readonly UIImageView imageView = new UIImageView { BackgroundColor = ColorConsts.Background.Color() };
 
         public ImageViewController()
         {

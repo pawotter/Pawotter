@@ -11,7 +11,6 @@ namespace Pawotter.iOS.Views
             UILabel.Appearance.BackgroundColor = UIColor.Clear;
             UILabel.Appearance.Font = L.NormalFont;
             UILabel.Appearance.TextColor = ColorConsts.Text.Color();
-            UIImageView.Appearance.BackgroundColor = ColorConsts.Background.Color();
             UICollectionView.Appearance.BackgroundColor = ColorConsts.ListBackgroud.Color();
             UITableView.Appearance.BackgroundColor = ColorConsts.ListBackgroud.Color();
             UITableView.Appearance.SectionIndexBackgroundColor = ColorConsts.ListBackgroud.Color();

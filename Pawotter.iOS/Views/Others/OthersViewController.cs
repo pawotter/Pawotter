@@ -3,6 +3,7 @@ using CoreGraphics;
 using Foundation;
 using System;
 using Pawotter.iOS.Views.Libs.SwipePage;
+using SafariServices;
 
 namespace Pawotter.iOS.Views.Others
 {
