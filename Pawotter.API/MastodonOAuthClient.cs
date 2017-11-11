@@ -25,7 +25,21 @@ namespace Pawotter.API
                 .ContinueWith((task) => JsonConvert.DeserializeObject<Core.Entities.OAuth.Application>(task.Result));
         }
 
-        public async Task<Core.Entities.OAuth.Token> GetOAuthToken(string clientId, string clientSecret, string username, string password, Core.Entities.OAuth.AccessScope scope, CancellationToken? token = null)
+        public async Task<Core.Entities.OAuth.Token> GetOAuthToken(string clientId, string clientSecret, string refreshToken, CancellationToken? token = null)
+        {
+            var data = new Dictionary<string, string> {
+                { "client_id", clientId },
+                { "client_secret", clientSecret },
+                { "grant_type", "refresh_token" },
+                { "refresh_token", refreshToken },
+            };
+            var response = await PostAsync("/oauth/token", data, null, token);
+            return await response
+                .Content.ReadAsStringAsync()
+                .ContinueWith((task) => JsonConvert.DeserializeObject<Core.Entities.OAuth.Token>(task.Result));
+        }
+
+        public async Task<Core.Entities.OAuth.Token> GetOAuthTokenByPassword(string clientId, string clientSecret, string username, string password, Core.Entities.OAuth.AccessScope scope, CancellationToken? token = null)
         {
             var data = new Dictionary<string, string> {
                 { "client_id", clientId },
