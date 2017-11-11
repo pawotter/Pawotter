@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System;
 
 namespace Pawotter.API
 {
@@ -22,5 +23,15 @@ namespace Pawotter.API
         }
 
         internal static string UrlEncoded(this object obj) => WebUtility.UrlEncode(obj.ToString());
+
+        internal static IDictionary<string, string> GetQueryParameters(this Uri uri)
+        {
+            if (uri == null) return new Dictionary<string, string>();
+            return uri.Query
+                 .Split("?&".ToCharArray())
+                 .Where(x => !string.IsNullOrEmpty(x))
+                 .Select(x => x.Split('='))
+                 .ToDictionary(x => Uri.UnescapeDataString(x[0]), x => Uri.UnescapeDataString(x[1]));
+        }
     }
 }

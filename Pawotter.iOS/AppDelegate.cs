@@ -6,6 +6,9 @@ using HockeyApp.iOS;
 using Pawotter.Core.Logger;
 using Pawotter.iOS.Libs.KeychainService;
 using Pawotter.iOS.Services;
+using System;
+using Pawotter.API;
+using System.Text.RegularExpressions;
 
 namespace Pawotter.iOS
 {
@@ -17,14 +20,7 @@ namespace Pawotter.iOS
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             Appearance.Configure();
-
             Logger.Shared.LogLevel = LogLevel.Debug;
-            IKeychainService<KeychainKey> keychain = new KeychainService<KeychainKey>(new KeychainServiceConfig("PWT", "Pawotter", Security.SecAccessible.WhenUnlockedThisDeviceOnly));
-            keychain.TryGet(KeychainKey.Token, out var token);
-            keychain.TrySet(KeychainKey.Token, "hosffasdfjpasdfjoiajsdiofjge");
-            keychain.TryGet(KeychainKey.Token, out var token2);
-            keychain.TryRemove(KeychainKey.Token);
-            keychain.TryGet(KeychainKey.Token, out var token3);
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
             var vc = new AppNavigationController(new MainTabBarController());
@@ -44,8 +40,26 @@ namespace Pawotter.iOS
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
-            Logger.Shared.Debug($"Application.OpenUrl: {url}");
-            return true;
+            if (Uri.TryCreate(url.AbsoluteString, UriKind.Absolute, out var uri) && uri.Scheme.Equals("pawotter") && uri.Host.Equals("app"))
+            {
+                switch (uri.AbsolutePath)
+                {
+                    case string authorize when Regex.IsMatch(authorize, @"^/authorize?.+"):
+                        var refreshToken = MastodonOAuthClient.GetRefreshTokenFromRedirectUri(new Uri(url.AbsoluteString));
+                        Logger.Shared.Debug($"Application.OpenUrl: AUTHORIZE (code = {refreshToken})");
+                        NSNotificationCenter.DefaultCenter.PostNotificationName(WebViewController.CloseSafariViewControllerNotification, url);
+                        break;
+                    case string home when Regex.IsMatch(home, @"^/home"):
+                        Logger.Shared.Debug($"Application.OpenUrl: HOME");
+                        break;
+                    default:
+                        Logger.Shared.Debug($"Application.OpenUrl: {uri}");
+                        break;
+                }
+                return true;
+            }
+            Logger.Shared.Debug($"Application.OpenUrl: INVALID (uri = {uri})");
+            return false;
         }
     }
 }

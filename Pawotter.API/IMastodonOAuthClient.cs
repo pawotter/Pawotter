@@ -26,5 +26,15 @@ namespace Pawotter.API
         /// <param name="scope">Scope.</param>
         /// <param name="token">Token.</param>
         Task<Core.Entities.OAuth.Token> GetOAuthToken(string clientId, string clientSecret, string username, string password, Core.Entities.OAuth.AccessScope scope, CancellationToken? token = null);
+
+        /// <summary>
+        /// If you have neither refresh nor access token, tell the user to visit this uri.
+        /// https://github.com/tootsuite/documentation/blob/master/Using-the-API/OAuth-details.md
+        /// </summary>
+        /// <returns>The OA uth authorize URI.</returns>
+        /// <param name="redirectUris">Redirect uris.</param>
+        /// <param name="scope">Scope.</param>
+        /// <param name="clientId">Client identifier.</param>
+        Uri GetOAuthAuthorizeUri(Uri redirectUris, Core.Entities.OAuth.AccessScope scope, string clientId);
     }
 }

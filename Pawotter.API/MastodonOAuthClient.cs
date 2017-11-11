@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace Pawotter.API
 {
@@ -38,6 +39,25 @@ namespace Pawotter.API
             return await response
                 .Content.ReadAsStringAsync()
                 .ContinueWith((task) => JsonConvert.DeserializeObject<Core.Entities.OAuth.Token>(task.Result));
+        }
+
+        public Uri GetOAuthAuthorizeUri(Uri redirectUris, Core.Entities.OAuth.AccessScope scope, string clientId)
+        {
+            var ps = new Dictionary<string, object>
+            {
+                { "response_type", "code" },
+                { "redirect_uri", redirectUris.AbsoluteUri },
+                { "scope", scope.QueryString },
+                { "client_id", clientId }
+            };
+            return CreateUrl(baseUri, "/oauth/authorize", ps);
+        }
+
+        public static string GetRefreshTokenFromRedirectUri(Uri uri)
+        {
+            if (uri == null) return null;
+            var codeQuery = uri.GetQueryParameters();
+            return codeQuery?.FirstOrDefault(x => x.Key.Equals("code")).Value;
         }
     }
 }

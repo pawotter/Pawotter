@@ -8,18 +8,18 @@ namespace Pawotter.API
 {
     public class BaseApiClient
     {
-        readonly Uri baseUrl;
+        protected readonly Uri baseUri;
         readonly HttpClient http;
 
-        protected BaseApiClient(Uri baseUrl, HttpClient http)
+        protected BaseApiClient(Uri baseUri, HttpClient http)
         {
-            this.baseUrl = baseUrl;
+            this.baseUri = baseUri;
             this.http = http;
         }
 
         protected async Task<HttpResponseMessage> GetAsync(string path, IEnumerable<KeyValuePair<string, object>> parameters = null, Dictionary<string, string> headers = null, CancellationToken? token = null)
         {
-            var url = CreateUrl(baseUrl, path, parameters);
+            var url = CreateUrl(baseUri, path, parameters);
             var request = CreateRequest(HttpMethod.Get, url, headers);
             var response = token.HasValue ? await http.SendAsync(request, token.Value) : await http.SendAsync(request);
             response.EnsureSuccessStatusCode();
@@ -43,7 +43,7 @@ namespace Pawotter.API
 
         async Task<HttpResponseMessage> SendFormUrlEncodedContentAsyc(HttpMethod method, string path, Dictionary<string, string> parameters = null, Dictionary<string, string> headers = null, CancellationToken? token = null)
         {
-            var url = CreateUrl(baseUrl, path, null);
+            var url = CreateUrl(baseUri, path, null);
             var request = CreateRequest(method, url, headers);
             if (parameters != null) request.Content = new FormUrlEncodedContent(parameters);
             var response = token.HasValue ? await http.SendAsync(request, token.Value) : await http.SendAsync(request);
@@ -62,23 +62,23 @@ namespace Pawotter.API
             return request;
         }
 
-        static Uri CreateUrl(Uri baseUri, string path, IEnumerable<KeyValuePair<string, object>> parameters)
+        protected static Uri CreateUrl(Uri baseUri, string path, IEnumerable<KeyValuePair<string, object>> parameters)
         {
             var p = path ?? "";
             var q = parameters?.AsQueryString() ?? "";
             return new Uri(baseUri, $"{p}{q}");
         }
 
-        public override string ToString() => string.Format("[BaseApiClient: baseUrl={0}, http={1}]", baseUrl, http);
+        public override string ToString() => string.Format("[BaseApiClient: baseUrl={0}, http={1}]", baseUri, http);
 
         public override bool Equals(object obj)
         {
             var o = obj as BaseApiClient;
             if (o == null) return false;
-            return Equals(baseUrl, o.baseUrl) &&
+            return Equals(baseUri, o.baseUri) &&
                 Equals(http, o.http);
         }
 
-        public override int GetHashCode() => Core.Object.GetHashCode(baseUrl, http);
+        public override int GetHashCode() => Core.Object.GetHashCode(baseUri, http);
     }
 }
