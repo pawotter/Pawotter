@@ -216,6 +216,7 @@
     <Folder Include="Views\Libs\" />
     <Folder Include="Views\Libs\SwipePage\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\Instance\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
@@ -265,6 +266,8 @@
     <Compile Include="Views\Libs\SwipePage\SwipeSampleTabViewController.cs" />
     <Compile Include="Services\KeychainKey.cs" />
     <Compile Include="Views\WebViewController.cs" />
+    <Compile Include="Views\Instance\InstancesViewController.cs" />
+    <Compile Include="Views\Instance\InstanceCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.ViewModels\Pawotter.ViewModels.csproj">

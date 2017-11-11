@@ -32,6 +32,7 @@
     <Compile Include="AccountViewModel.cs" />
     <Compile Include="AccountsViewModel.cs" />
     <Compile Include="SearchViewModel.cs" />
+    <Compile Include="InstancesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

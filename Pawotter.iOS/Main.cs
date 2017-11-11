@@ -3,6 +3,7 @@ using SimpleInjector;
 using UIKit;
 using Pawotter.iOS.Libs.KeychainService;
 using Pawotter.iOS.Services;
+using Pawotter.Core.Logger;
 
 namespace Pawotter.iOS
 {
@@ -20,6 +21,7 @@ namespace Pawotter.iOS
 
         static void ConfigureContainer()
         {
+            Container.RegisterSingleton<ILogger>(Logger.Shared);
             Container.RegisterSingleton<IRouter>(new Router());
             Container.RegisterSingleton<IKeychainService<KeychainKey>>(new KeychainService<KeychainKey>(new KeychainServiceConfig("PWT", "pawotter", Security.SecAccessible.WhenUnlockedThisDeviceOnly)));
 

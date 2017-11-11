@@ -4,8 +4,6 @@ using Pawotter.iOS.Views;
 using Pawotter.iOS.Views.Components;
 using HockeyApp.iOS;
 using Pawotter.Core.Logger;
-using Pawotter.iOS.Libs.KeychainService;
-using Pawotter.iOS.Services;
 using System;
 using Pawotter.API;
 using System.Text.RegularExpressions;
