@@ -14,6 +14,7 @@ namespace Pawotter.iOS.Views
     public abstract class BaseViewController : UIViewController
     {
         protected ILogger logger = Application.Container.GetInstance<ILogger>();
+        protected CompositeDisposable disposeBag = new CompositeDisposable();
 
         protected BaseViewController()
         {
@@ -36,6 +37,13 @@ namespace Pawotter.iOS.Views
                 TabBarController.NavigationItem.RightBarButtonItem = null;
                 TabBarController.NavigationItem.LeftBarButtonItem = null;
             }
+
+        }
+
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+            disposeBag.Clear();
         }
 
         ~BaseViewController()

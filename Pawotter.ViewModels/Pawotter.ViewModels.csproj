@@ -33,6 +33,7 @@
     <Compile Include="AccountsViewModel.cs" />
     <Compile Include="SearchViewModel.cs" />
     <Compile Include="InstancesViewModel.cs" />
+    <Compile Include="BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -41,6 +42,10 @@
     <ProjectReference Include="..\Pawotter.Core\Pawotter.Core.csproj">
       <Project>{2A5FE69B-08E1-457A-A004-2D18A608AE97}</Project>
       <Name>Pawotter.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pawotter.API\Pawotter.API.csproj">
+      <Project>{16E227F1-D329-46AE-BEBF-16E67903E05F}</Project>
+      <Name>Pawotter.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

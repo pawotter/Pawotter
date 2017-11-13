@@ -4,6 +4,9 @@ using UIKit;
 using Pawotter.iOS.Libs.KeychainService;
 using Pawotter.iOS.Services;
 using Pawotter.Core.Logger;
+using Pawotter.API;
+using System;
+using System.Net.Http;
 
 namespace Pawotter.iOS
 {
@@ -24,6 +27,7 @@ namespace Pawotter.iOS
             Container.RegisterSingleton<ILogger>(Logger.Shared);
             Container.RegisterSingleton<IRouter>(new Router());
             Container.RegisterSingleton<IKeychainService<KeychainKey>>(new KeychainService<KeychainKey>(new KeychainServiceConfig("PWT", "pawotter", Security.SecAccessible.WhenUnlockedThisDeviceOnly)));
+            Container.RegisterSingleton<IMastodonApiClient>(new MastodonApiClient(new Uri("https://friends.nico"), new HttpClient()));
 
 #if DEBUG
             Container.Verify();

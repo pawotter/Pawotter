@@ -34,6 +34,7 @@
     <Compile Include="MastodonOAuthClient.cs" />
     <Compile Include="BaseApiClient.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="MastodonApiClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pawotter.Core\Pawotter.Core.csproj">

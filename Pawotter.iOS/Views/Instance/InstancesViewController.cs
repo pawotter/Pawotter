@@ -4,6 +4,9 @@ using Foundation;
 using System;
 using Pawotter.iOS.Views.Instance;
 using Pawotter.ViewModels;
+using System.Linq;
+using Reactive.Bindings.Extensions;
+using System.Reactive.Linq;
 
 namespace Pawotter.iOS.Views
 {
@@ -12,6 +15,7 @@ namespace Pawotter.iOS.Views
         readonly InstancesViewModel viewModel;
 
         readonly UITableView table = new UITableView(CGRect.Empty, UITableViewStyle.Grouped);
+        readonly UIRefreshControl refreshControl = new UIRefreshControl();
 
         public InstancesViewController(InstancesViewModel viewModel)
         {
@@ -24,6 +28,7 @@ namespace Pawotter.iOS.Views
             Title = viewModel.Title;
             EdgesForExtendedLayout = UIRectEdge.None;
             table.RegisterClassForCellReuse(typeof(InstanceCell), nameof(InstanceCell));
+            table.RefreshControl = refreshControl;
             View.AddSubviews(table);
         }
 
@@ -38,6 +43,27 @@ namespace Pawotter.iOS.Views
             base.ViewWillAppear(animated);
             table.WeakDelegate = this;
             table.WeakDataSource = this;
+            BindFromUI();
+            BindFromViewModel();
+            viewModel.RefreshContent();
+        }
+
+        void BindFromUI()
+        {
+            viewModel.Instances
+                     .Subscribe(_ => table.ReloadData())
+                     .AddTo(disposeBag);
+            viewModel.IsLoading
+                     .Where(x => !x)
+                     .Subscribe(_ => refreshControl.EndRefreshing())
+                     .AddTo(disposeBag);
+        }
+
+        void BindFromViewModel()
+        {
+            Observable.FromEventPattern(x => refreshControl.ValueChanged += x, x => refreshControl.ValueChanged -= x)
+                      .Subscribe(_ => viewModel.RefreshContent())
+                      .AddTo(disposeBag);
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -63,12 +89,13 @@ namespace Pawotter.iOS.Views
         }
 
         [Export("tableView:numberOfRowsInSection:")]
-        public nint RowsInSection(UITableView tableView, nint section) => 100;
+        public nint RowsInSection(UITableView tableView, nint section) => viewModel.NumberOfRows;
 
         [Export("tableView:cellForRowAtIndexPath:")]
         public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             var cell = tableView.DequeueReusableCell(nameof(InstanceCell), indexPath) as InstanceCell;
+            cell.Update(viewModel.Instances.Value.ElementAtOrDefault(indexPath.Row));
             return cell ?? new UITableViewCell();
         }
     }

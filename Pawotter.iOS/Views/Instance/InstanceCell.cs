@@ -30,5 +30,10 @@ namespace Pawotter.iOS.Views.Instance
             instanceName.Frame = new CGRect(instanceIcon.MaxX().PlusPadding(), instanceIcon.MinY(), textW, L.NormalFont.LineHeight);
             acct.Frame = new CGRect(instanceName.X(), instanceName.MaxY(), textW, L.NormalFont.LineHeight);
         }
+
+        public void Update(Core.Entities.Instance instance)
+        {
+            instanceName.Text = instance?.Title;
+        }
     }
 }

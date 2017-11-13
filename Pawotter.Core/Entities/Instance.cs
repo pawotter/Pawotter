@@ -16,21 +16,22 @@ namespace Pawotter.Core.Entities
         public string Description { get; set; }
         [JsonProperty(PropertyName = "email")]
         public string Email { get; set; }
+        [JsonProperty(PropertyName = "version")]
+        public string Version { get; set; }
+        [JsonProperty(PropertyName = "stats")]
+        public Stats Stats { get; set; }
 
-        /// <summary>
-        /// Initializes for JSON.NET
-        /// </summary>
-        internal Instance() { }
-
-        public Instance(string uri, string title, string description, string email)
+        public Instance(string uri, string title, string description, string email, string version, Stats stats)
         {
             Uri = uri;
             Title = title;
             Description = description;
             Email = email;
+            Version = version;
+            Stats = stats;
         }
 
-        public override string ToString() => string.Format("[Instance: Uri={0}, Title={1}, Description={2}, Email={3}]", Uri, Title, Description, Email);
+        public override string ToString() => string.Format("[Instance: Uri={0}, Title={1}, Description={2}, Email={3}, Version={4}, Stats={5}]", Uri, Title, Description, Email, Version, Stats);
 
         public override bool Equals(object obj)
         {
@@ -39,12 +40,16 @@ namespace Pawotter.Core.Entities
             return Equals(Uri, o.Uri) &&
                 Equals(Title, o.Title) &&
                 Equals(Description, o.Description) &&
-                Equals(Email, o.Email);
+                Equals(Email, o.Email) &&
+                Equals(Version, o.Version) &&
+                Equals(Stats, o.Stats);
         }
 
         public override int GetHashCode() => Object.GetHashCode(Uri) ^
-                         Object.GetHashCode(Title) ^
-                         Object.GetHashCode(Description) ^
-                         Object.GetHashCode(Email);
+                                             Object.GetHashCode(Title) ^
+                                             Object.GetHashCode(Description) ^
+                                             Object.GetHashCode(Email) ^
+                                             Object.GetHashCode(Version) ^
+                                             Object.GetHashCode(Stats);
     }
 }

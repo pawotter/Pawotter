@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pawotter.API
 {
-    public class BaseApiClient
+    public abstract class BaseApiClient
     {
         protected readonly Uri baseUri;
-        readonly HttpClient http;
+        protected readonly HttpClient http;
 
         protected BaseApiClient(Uri baseUri, HttpClient http)
         {
@@ -51,7 +51,7 @@ namespace Pawotter.API
             return response;
         }
 
-        HttpRequestMessage CreateRequest(HttpMethod method, Uri url, Dictionary<string, string> headers = null)
+        protected static HttpRequestMessage CreateRequest(HttpMethod method, Uri url, Dictionary<string, string> headers = null)
         {
             var request = new HttpRequestMessage(method, url);
             if (headers == null) return request;

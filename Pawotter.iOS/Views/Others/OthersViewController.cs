@@ -3,7 +3,7 @@ using CoreGraphics;
 using Foundation;
 using System;
 using Pawotter.iOS.Views.Libs.SwipePage;
-using SafariServices;
+using Pawotter.ViewModels;
 
 namespace Pawotter.iOS.Views.Others
 {
@@ -54,7 +54,15 @@ namespace Pawotter.iOS.Views.Others
         [Export("tableView:didSelectRowAtIndexPath:")]
         public void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            Application.Router.PushViewController(new SwipeSampleTabViewController(), true);
+            switch (indexPath.Row)
+            {
+                case 0:
+                    Application.Router.PushViewController(new InstancesViewController(new InstancesViewModel(Application.Container)), true);
+                    break;
+                default:
+                    Application.Router.PushViewController(new SwipeSampleTabViewController(), true);
+                    break;
+            }
             tableView.DeselectRow(indexPath, true);
         }
 

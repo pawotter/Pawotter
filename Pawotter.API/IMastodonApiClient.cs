@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Pawotter.Core.Entities;
 
@@ -189,8 +190,9 @@ namespace Pawotter.API
         /// Getting instance information.
         /// </summary>
         /// <returns>The current Instance.</returns>
-        /// <param name="token">Token.</param>
-        Task<Instance> GetInstanceAsync(CancellationToken? token = null);
+        /// <param name="instanceUri">Instance Uri.</param>
+        /// <param name="token">Token.</param>s
+        Task<Instance> GetInstanceAsync(Uri instanceUri = null, CancellationToken? token = null);
 
         /// <summary>
         /// Uploading a media attachment.
